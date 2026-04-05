@@ -27,6 +27,8 @@ body{font-family:'Nunito Sans',sans-serif;background:var(--cream);color:var(--te
 header{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;background:rgba(244,247,250,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
 header.sc{box-shadow:var(--sh)}
 .logo{display:flex;align-items:center;cursor:pointer;text-decoration:none}
+.logo svg{height:44px;width:auto;transition:transform .2s,filter .2s}
+.logo svg:hover{transform:scale(1.05);filter:brightness(1.08)}
 .logo img{height:44px;width:auto;border-radius:10px;object-fit:contain;transition:transform .2s,opacity .2s}
 .logo img:hover{transform:scale(1.05);opacity:.9}
 .ld{width:10px;height:10px;border-radius:50%;background:var(--sage);animation:beat 2.5s ease-in-out infinite}
@@ -252,7 +254,7 @@ footer{background:var(--text);padding:60px 24px 32px}
 @keyframes mpop{from{opacity:0;transform:scale(.95)translateY(12px)}to{opacity:1;transform:scale(1)translateY(0)}}
 .mcl{position:absolute;top:16px;right:16px;background:var(--cream2);border:1px solid var(--border);color:var(--text2);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .mcl:hover{background:var(--sand);color:var(--text)}
-.mlogo{font-family:'Nunito',sans-serif;font-size:22px;font-weight:700;color:var(--terra);text-align:center;margin-bottom:6px}
+.mlogo{font-family:'Nunito',sans-serif;font-size:22px;font-weight:800;text-align:center;margin-bottom:6px;background:linear-gradient(115deg,#7ADBD0 0%,#A8C0E8 45%,#C5A8E8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:2px}
 .mtit{font-size:22px;font-weight:600;color:var(--text);margin-bottom:6px}
 .msub{font-size:14px;color:var(--text2);margin-bottom:28px;line-height:1.6}
 .sobn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--card);border:1.5px solid var(--border);color:var(--text);font-family:inherit;font-size:14px;padding:12px;border-radius:12px;cursor:pointer;transition:all .2s;margin-bottom:10px}
@@ -402,7 +404,25 @@ select.finp{appearance:none;cursor:pointer}
 <body>
 
 <header id="hdr">
-  <a class="logo" href="#"><img src="selmi-logo.png" alt="SELMI" /></a>
+  <a class="logo" href="#" aria-label="SELMI">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" height="44" role="img" aria-label="SELMI">
+      <defs>
+        <linearGradient id="selmiGradHdr" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#7ADBD0"/>
+          <stop offset="40%" stop-color="#A8C0E8"/>
+          <stop offset="70%" stop-color="#C5A8E8"/>
+          <stop offset="100%" stop-color="#D4A8D8"/>
+        </linearGradient>
+        <rect id="pill" x="2" y="4" width="196" height="52" rx="18" ry="18"/>
+      </defs>
+      <!-- pill background -->
+      <rect x="2" y="4" width="196" height="52" rx="18" ry="18" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+      <!-- inner border -->
+      <rect x="6" y="8" width="188" height="44" rx="14" ry="14" fill="none" stroke="#f0f0f4" stroke-width="1"/>
+      <!-- SELMI text with gradient -->
+      <text x="100" y="40" font-family="Nunito, Trebuchet MS, sans-serif" font-weight="800" font-size="28" letter-spacing="4" text-anchor="middle" fill="url(#selmiGradHdr)">SELMI</text>
+    </svg>
+  </a>
   <nav>
     <a href="#dispositivo">El dispositivo</a><a href="#para-quien">Para qui&#233;n</a>
     <a href="#como-funciona">Cómo funciona</a>
@@ -576,7 +596,7 @@ select.finp{appearance:none;cursor:pointer}
           <div class="msg u"><div class="mav u">D</div><div class="bub u">Bien, gracias. Aunque extrañé a mis nietos.</div></div>
           <div class="msg"><div class="mav n">N</div><div class="bub n">Lo entiendo. ¿Sabés que tu nieto Marcos cumple años esta semana? ¿Le grabamos un mensaje juntas?</div></div>
           <div class="msg u"><div class="mav u">D</div><div class="bub u">¡Qué buena idea! Me encantaría.</div></div>
-          <div class="msg"><div class="mav n">N</div><div class="bub n">Perfecto ðŸŽ‚ Ahora que estamos, ¿tomaste el medicamento de las 9? Es importante no saltárselo...<div style="margin-top:10px;display:flex;gap:4px"><span class="tdd"></span><span class="tdd"></span><span class="tdd"></span></div></div></div>
+          <div class="msg"><div class="mav n">N</div><div class="bub n">Perfecto 🎂 Ahora que estamos, ¿tomaste el medicamento de las 9? Es importante no saltárselo...<div style="margin-top:10px;display:flex;gap:4px"><span class="tdd"></span><span class="tdd"></span><span class="tdd"></span></div></div></div>
         </div>
       </div>
     </div>
@@ -765,7 +785,23 @@ select.finp{appearance:none;cursor:pointer}
 <!-- FOOTER -->
 <footer>
   <div class="ftop">
-    <div><div class="flogo">SELMI</div><div class="fdesc">La compañera de IA para adultos mayores que viven solos. Compañía, seguridad y tranquilidad para toda la familia en LATAM.</div></div>
+    <div>
+      <div class="flogo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" height="38" role="img" aria-label="SELMI" style="display:block;margin-bottom:10px">
+          <defs>
+            <linearGradient id="selmiGradFtr" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7ADBD0"/>
+              <stop offset="40%" stop-color="#A8C0E8"/>
+              <stop offset="70%" stop-color="#C5A8E8"/>
+              <stop offset="100%" stop-color="#D4A8D8"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="4" width="196" height="52" rx="18" ry="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <text x="100" y="40" font-family="Nunito, Trebuchet MS, sans-serif" font-weight="800" font-size="28" letter-spacing="4" text-anchor="middle" fill="url(#selmiGradFtr)">SELMI</text>
+        </svg>
+      </div>
+      <div class="fdesc">La compañera de IA para adultos mayores que viven solos. Compañía, seguridad y tranquilidad para toda la familia en LATAM.</div>
+    </div>
     <div><div class="fh">Producto</div><div class="flinks"><a href="#dispositivo">El dispositivo</a><a href="#para-quien">Para qui&#233;n</a><a href="#como-funciona">Cómo funciona</a><a href="#funcionalidades">Funcionalidades</a><a href="#planes">Planes y precios</a></div></div>
     <div><div class="fh">Legal</div><div class="flinks"><a onclick="openM('tyc')">Términos y Condiciones</a><a onclick="openM('privacy')">Política de Privacidad</a><a onclick="openM('tyc')">Derechos ARCO</a><a onclick="openM('tyc')">Seguridad</a></div></div>
     <div><div class="fh">Contacto</div><div class="flinks"><a><span class="__cf_email__" data-cfemail="0860676469486667656126606d69647c60">[email&#160;protected]</span></a><a>Soporte 24/7</a><a>Buenos Aires, Argentina</a></div></div>
