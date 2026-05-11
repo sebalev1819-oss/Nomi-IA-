@@ -404,6 +404,40 @@ select.finp{appearance:none;cursor:pointer}
   /* Stitle */
   .stitle{font-size:clamp(28px,7vw,42px)}
 }
+
+/* DÍA DE CARMEN */
+.carmen-bg{background:linear-gradient(180deg,#F8F9FC 0%,#EEF1F5 100%)}
+.carmen-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;margin-top:64px;align-items:start}
+.carmen-profile{background:#fff;border:1.5px solid var(--border);border-radius:24px;padding:36px 32px;box-shadow:var(--sh)}
+.cp-avatar{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#A8C0E8 0%,#C5A8E8 100%);color:#fff;font-family:'Inter',sans-serif;font-size:36px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.cp-name{font-family:'Inter','Nunito',sans-serif;font-size:30px;font-weight:800;color:#0F1E2E;line-height:1;letter-spacing:-.5px}
+.cp-meta{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;color:var(--text3);margin-top:8px}
+.cp-divider{height:1px;background:var(--border);margin:24px 0 14px}
+.cp-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--border)}
+.cp-row:last-child{border-bottom:none}
+.cp-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--text3);text-transform:uppercase}
+.cp-value{font-family:'Inter','Nunito',sans-serif;font-size:14px;font-weight:600;color:#0F1E2E}
+.carmen-timeline{display:flex;flex-direction:column;gap:14px;position:relative}
+.carmen-timeline::before{content:'';position:absolute;left:62px;top:22px;bottom:22px;width:2px;background:linear-gradient(180deg,#7ADBD0 0%,#A8C0E8 35%,#C5A8E8 65%,#E2A8C8 100%);opacity:.45;border-radius:2px}
+.ct-item{display:grid;grid-template-columns:62px 26px 1fr;align-items:start}
+.ct-time{font-family:'Inter',sans-serif;font-size:13px;font-weight:700;color:#0F1E2E;padding-top:20px;letter-spacing:.3px}
+.ct-dot{width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid #A8C0E8;margin:22px 0 0 6px;position:relative;z-index:1;box-shadow:0 0 0 4px #F8F9FC}
+.ct-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:16px 20px;margin-left:14px;transition:all .25s}
+.ct-card:hover{border-color:#A8C0E8;box-shadow:var(--sh);transform:translateX(3px)}
+.ct-title{font-family:'Inter','Nunito',sans-serif;font-size:15px;font-weight:700;color:#0F1E2E;margin-bottom:5px}
+.ct-desc{font-family:'Inter','Nunito Sans',sans-serif;font-size:13.5px;color:var(--text2);line-height:1.55}
+@media (max-width:920px){.carmen-grid{grid-template-columns:1fr;gap:36px}}
+@media (max-width:640px){
+  .carmen-profile{padding:28px 24px}
+  .cp-name{font-size:26px}
+  .carmen-timeline::before{left:50px}
+  .ct-item{grid-template-columns:50px 22px 1fr}
+  .ct-time{font-size:11.5px;padding-top:18px}
+  .ct-dot{margin-top:20px}
+  .ct-card{margin-left:10px;padding:14px 16px}
+  .ct-title{font-size:14px}
+  .ct-desc{font-size:13px}
+}
 </style>
 </head>
 <body>
@@ -665,6 +699,79 @@ select.finp{appearance:none;cursor:pointer}
     <p>SELMI cuida a tu ser querido cuando vos no podés estar. Reportes diarios, alertas instantáneas, compañía real.</p>
   </div>
 </div>
+
+<!-- DÍA DE CARMEN -->
+<section id="carmen" class="carmen-bg">
+  <div class="container">
+    <div style="text-align:center;max-width:720px;margin:0 auto">
+      <span class="stag">El día de Carmen</span>
+      <h2 class="stitle">Carmen, 78 años.<br><em>Una jornada acompañada.</em></h2>
+      <p class="ssub" style="margin:18px auto 0;max-width:560px">Vive sola en Buenos Aires. Sus hijos están en Madrid. SELMI la acompaña desde que se levanta.</p>
+    </div>
+    <div class="carmen-grid">
+      <div class="carmen-profile">
+        <div class="cp-avatar">C</div>
+        <div class="cp-name">Carmen</div>
+        <div class="cp-meta">78 AÑOS · BUENOS AIRES</div>
+        <div class="cp-divider"></div>
+        <div class="cp-row"><span class="cp-label">Diagnóstico</span><span class="cp-value">Hipertensión</span></div>
+        <div class="cp-row"><span class="cp-label">Medicación</span><span class="cp-value">2 dosis / día</span></div>
+        <div class="cp-row"><span class="cp-label">Familia</span><span class="cp-value">2 hijos en Madrid</span></div>
+        <div class="cp-row"><span class="cp-label">SELMI activo</span><span class="cp-value">Hace 6 meses</span></div>
+      </div>
+      <div class="carmen-timeline">
+        <div class="ct-item">
+          <div class="ct-time">07:30</div>
+          <div class="ct-dot"></div>
+          <div class="ct-card">
+            <div class="ct-title">Buen día, Carmen</div>
+            <div class="ct-desc">SELMI la saluda y le recuerda tomar el Enalapril con el desayuno.</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-time">10:15</div>
+          <div class="ct-dot"></div>
+          <div class="ct-card">
+            <div class="ct-title">Conversación sobre Sofía</div>
+            <div class="ct-desc">12 minutos hablando de su nieta. Resumen enviado a Lucas.</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-time">13:00</div>
+          <div class="ct-dot"></div>
+          <div class="ct-card">
+            <div class="ct-title">Almuerzo e hidratación</div>
+            <div class="ct-desc">«Carmen, ¿ya almorzaste? Acordate del vaso de agua.»</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-time">16:00</div>
+          <div class="ct-dot"></div>
+          <div class="ct-card">
+            <div class="ct-title">Videollamada de Lucas</div>
+            <div class="ct-desc">La llamada entra sola en pantalla. Carmen habla 18 minutos con su hijo.</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-time">19:30</div>
+          <div class="ct-dot"></div>
+          <div class="ct-card">
+            <div class="ct-title">Movimiento lento detectado</div>
+            <div class="ct-desc">SELMI sugiere descansar. La familia recibe un aviso de bienestar.</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-time">22:00</div>
+          <div class="ct-dot"></div>
+          <div class="ct-card">
+            <div class="ct-title">Cierre del día</div>
+            <div class="ct-desc">Resumen del día enviado a Madrid. «Que descanses, Carmen.»</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- MÉTRICAS -->
 <section class="msec">
