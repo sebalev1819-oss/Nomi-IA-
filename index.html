@@ -428,6 +428,21 @@ select.finp{appearance:none;cursor:pointer}
 .ct-desc{font-family:'Inter','Nunito Sans',sans-serif;font-size:13.5px;color:var(--text2);line-height:1.55}
 @media (max-width:920px){.carmen-grid{grid-template-columns:1fr;gap:36px}}
 
+/* UN DÍA CON SELMI — 3 escenas (deck pág. 5) */
+.dia-bg{background:#fff;border-top:1px solid var(--border)}
+.dia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.dia-card{background:#fff;border:1.5px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.dia-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(15,30,46,.10);border-color:#A8C0E8}
+.dia-photo{aspect-ratio:4/5;background-size:cover;background-position:center;position:relative}
+.dia-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,30,46,.08))}
+.dia-body{padding:24px 24px 26px}
+.dia-meta{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#7ADBD0;text-transform:uppercase;margin-bottom:10px}
+.dia-meta .dia-time{color:#0F1E2E}
+.dia-title{font-family:'Inter','Nunito',sans-serif;font-size:18px;font-weight:700;color:#0F1E2E;letter-spacing:-.3px;margin-bottom:10px}
+.dia-quote{font-family:'Inter','Nunito Sans',sans-serif;font-size:13.5px;color:var(--text2);line-height:1.6;border-left:2px solid #C5A8E8;padding-left:12px;font-style:italic}
+.dia-tag{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--text3);text-transform:uppercase;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+@media (max-width:880px){.dia-grid{grid-template-columns:1fr;gap:20px;max-width:480px;margin-left:auto;margin-right:auto}.dia-photo{aspect-ratio:16/10}}
+
 /* CTA FINAL — card de contacto (deck pág. 9) */
 .cta-new{background:linear-gradient(180deg,#F8F9FC 0%,#EEF1F5 100%);padding:120px 24px;position:relative;overflow:hidden}
 .cta-new::before{content:'';position:absolute;top:-200px;left:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(122,219,208,.08),transparent 70%);pointer-events:none}
@@ -727,6 +742,46 @@ select.finp{appearance:none;cursor:pointer}
     <p>SELMI cuida a tu ser querido cuando vos no podés estar. Reportes diarios, alertas instantáneas, compañía real.</p>
   </div>
 </div>
+
+<!-- UN DÍA CON SELMI -->
+<section id="un-dia" class="dia-bg" style="padding:96px 24px">
+  <div class="container">
+    <div style="text-align:center;max-width:720px;margin:0 auto">
+      <span class="stag">Un día con SELMI</span>
+      <h2 class="stitle">Acompañamiento real,<br><em>en cada momento del día</em></h2>
+      <p class="ssub" style="margin:18px auto 0;max-width:560px">SELMI vive en el hogar y reacciona ante lo que pasa — sin que nadie tenga que pedirlo.</p>
+    </div>
+    <div class="dia-grid">
+      <div class="dia-card">
+        <div class="dia-photo" style="background-image:url('selmi-medicacion.jpg')"></div>
+        <div class="dia-body">
+          <div class="dia-meta"><span class="dia-time">09:00</span> · Medicación</div>
+          <div class="dia-title">Recordatorio en la cocina</div>
+          <div class="dia-quote">«Carmen, ¿ya tomaste los medicamentos? Acordate del Enalapril con el desayuno.»</div>
+          <div class="dia-tag">Toma confirmada en la app</div>
+        </div>
+      </div>
+      <div class="dia-card">
+        <div class="dia-photo" style="background-image:url('selmi-bienestar.jpg')"></div>
+        <div class="dia-body">
+          <div class="dia-meta"><span class="dia-time">17:30</span> · Bienestar</div>
+          <div class="dia-title">Detección temprana</div>
+          <div class="dia-quote">«Sr. Pérez, detecté dificultad respiratoria. ¿Quiere que llame a emergencias?»</div>
+          <div class="dia-tag">Familia notificada al instante</div>
+        </div>
+      </div>
+      <div class="dia-card">
+        <div class="dia-photo" style="background-image:url('selmi-caida.jpg')"></div>
+        <div class="dia-body">
+          <div class="dia-meta"><span class="dia-time">23:10</span> · Seguridad</div>
+          <div class="dia-title">Caída detectada</div>
+          <div class="dia-quote">«¿Estás bien, Carmen? Decí 'ayuda' y llamo a tus contactos.»</div>
+          <div class="dia-tag">Protocolo de emergencia activo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- DÍA DE CARMEN -->
 <section id="carmen" class="carmen-bg">
