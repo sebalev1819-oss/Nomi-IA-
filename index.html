@@ -179,7 +179,7 @@ section{padding:96px 24px}
 .btog{display:flex;background:var(--cream);border:1.5px solid var(--border);border-radius:100px;padding:4px;width:fit-content;margin:0 auto 52px}
 .ptab{background:none;border:none;font-family:inherit;font-size:13px;font-weight:500;color:var(--text2);padding:8px 22px;border-radius:100px;cursor:pointer;transition:all .2s}
 .ptab.on{background:var(--terra);color:#fff;font-weight:600}
-.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:980px;margin:0 auto}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1240px;margin:0 auto}
 .plan{background:var(--card);border:1.5px solid var(--border);border-radius:22px;padding:36px 28px;display:flex;flex-direction:column;transition:all .3s;position:relative}
 .plan:hover{transform:translateY(-5px);box-shadow:var(--sh2)}
 .plan.pop{border-color:var(--terra);background:linear-gradient(160deg,#fff8f3,var(--cream))}
@@ -887,54 +887,70 @@ select.finp{appearance:none;cursor:pointer}
       </div>
     </div>
     <div class="pg">
-      <!-- PLAN 1: ESENCIAL -->
+      <!-- PLAN 1: ENTRY -->
       <div class="plan">
-        <div class="ptier">SELMI Esencial</div>
+        <div class="ptier">SELMI Entry</div>
         <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Para empezar</div>
         <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
-          <span class="pamt">&nbsp;</span>
+          <span class="pamt">USD 49</span>
         </div>
         <div class="pper">/mes</div>
         <div style="height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));border-radius:2px;margin:16px 0"></div>
         <ul class="plist" style="margin-bottom:28px">
-          <li>💬 800 min/mes</li>
+          <li>💬 300 min/mes de conversación</li>
           <li>➕ Minutos adicionales disponibles</li>
           <li>🎁 Kit completo incluido</li>
         </ul>
-        <button class="bpl bpl-g" onclick="openLead('SELMI Esencial')">Comenzar →</button>
+        <button class="bpl bpl-g" onclick="openLead('SELMI Entry')">Comenzar →</button>
       </div>
-      <!-- PLAN 2: COMPLETO (popular) -->
+      <!-- PLAN 2: BÁSICO -->
+      <div class="plan">
+        <div class="ptier">SELMI Básico</div>
+        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">El equilibrio justo</div>
+        <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
+          <span class="pamt">USD 76</span>
+        </div>
+        <div class="pper">/mes</div>
+        <div style="height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));border-radius:2px;margin:16px 0"></div>
+        <ul class="plist" style="margin-bottom:28px">
+          <li>💬 800 min/mes de conversación</li>
+          <li>➕ Minutos adicionales disponibles</li>
+          <li>🎁 Kit completo incluido</li>
+        </ul>
+        <button class="bpl bpl-g" onclick="openLead('SELMI Básico')">Comenzar →</button>
+      </div>
+      <!-- PLAN 3: PLUS (popular) -->
       <div class="plan pop">
         <div class="ptag">⭐ El más elegido</div>
-        <div class="ptier">SELMI Completo</div>
+        <div class="ptier">SELMI Plus</div>
         <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Mayor compañía</div>
         <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
-          <span class="pamt" style="color:var(--terra)">&nbsp;</span>
+          <span class="pamt" style="color:var(--terra)">USD 114</span>
         </div>
         <div class="pper">/mes</div>
         <div style="height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));border-radius:2px;margin:16px 0"></div>
         <ul class="plist" style="margin-bottom:28px">
-          <li>💬 1.200 min/mes</li>
-          <li>➕ Minutos adicionales disponibles</li>
+          <li>💬 Conversación ilimitada</li>
+          <li>🩺 Rutinas de bienestar completas</li>
           <li>🎁 Kit completo incluido</li>
         </ul>
-        <button class="bpl bpl-m" onclick="openLead('SELMI Completo')">Comenzar ahora →</button>
+        <button class="bpl bpl-m" onclick="openLead('SELMI Plus')">Comenzar ahora →</button>
       </div>
-      <!-- PLAN 3: PREMIUM -->
+      <!-- PLAN 4: FAMILIA -->
       <div class="plan">
-        <div class="ptier">SELMI Premium</div>
-        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Mayor acompañamiento</div>
+        <div class="ptier">SELMI Familia</div>
+        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Para toda la familia</div>
         <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
-          <span class="pamt">&nbsp;</span>
+          <span class="pamt">USD 152</span>
         </div>
         <div class="pper">/mes</div>
         <div style="height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));border-radius:2px;margin:16px 0"></div>
         <ul class="plist" style="margin-bottom:28px">
-          <li>💬 2.000 min/mes</li>
-          <li>➕ Minutos adicionales disponibles</li>
+          <li>💬 Conversación ilimitada</li>
+          <li>📱 2 dispositivos incluidos</li>
           <li>🎁 Kit completo incluido</li>
         </ul>
-        <button class="bpl bpl-g" onclick="openLead('SELMI Premium')">Elegir Premium →</button>
+        <button class="bpl bpl-g" onclick="openLead('SELMI Familia')">Elegir Familia →</button>
       </div>
     </div>
     <!-- Footer strip -->
@@ -1024,20 +1040,25 @@ select.finp{appearance:none;cursor:pointer}
       <div class="fg2"><label class="flbl">Zona / Ciudad de envío *</label><input class="finp" id="lead-zona" type="text" placeholder="Ej: Palermo, CABA · Córdoba Capital · Monterrey, MX"></div>
       <div class="flbl" style="margin-bottom:10px;margin-top:16px">Elegí tu plan *</div>
       <div class="lead-plan-grid">
-        <div class="lead-plan-card" id="lp-esencial" onclick="selectLeadPlan('SELMI Esencial')">
-          <div class="lpc-name">SELMI Esencial</div>
-          <div class="lpc-price">&nbsp;</div>
-          <div class="lpc-sub">&nbsp;</div>
+        <div class="lead-plan-card" id="lp-entry" onclick="selectLeadPlan('SELMI Entry')">
+          <div class="lpc-name">SELMI Entry</div>
+          <div class="lpc-price">USD 49/mes</div>
+          <div class="lpc-sub">300 min/mes</div>
         </div>
-        <div class="lead-plan-card sel" id="lp-completo" onclick="selectLeadPlan('SELMI Completo')">
-          <div class="lpc-name">⭐ SELMI Completo</div>
-          <div class="lpc-price">&nbsp;</div>
-          <div class="lpc-sub">&nbsp;</div>
+        <div class="lead-plan-card" id="lp-basico" onclick="selectLeadPlan('SELMI Básico')">
+          <div class="lpc-name">SELMI Básico</div>
+          <div class="lpc-price">USD 76/mes</div>
+          <div class="lpc-sub">800 min/mes</div>
         </div>
-        <div class="lead-plan-card" id="lp-premium" onclick="selectLeadPlan('SELMI Premium')">
-          <div class="lpc-name">SELMI Premium</div>
-          <div class="lpc-price">&nbsp;</div>
-          <div class="lpc-sub">&nbsp;</div>
+        <div class="lead-plan-card sel" id="lp-plus" onclick="selectLeadPlan('SELMI Plus')">
+          <div class="lpc-name">⭐ SELMI Plus</div>
+          <div class="lpc-price">USD 114/mes</div>
+          <div class="lpc-sub">Ilimitado</div>
+        </div>
+        <div class="lead-plan-card" id="lp-familia" onclick="selectLeadPlan('SELMI Familia')">
+          <div class="lpc-name">SELMI Familia</div>
+          <div class="lpc-price">USD 152/mes</div>
+          <div class="lpc-sub">Ilimitado · 2 dispositivos</div>
         </div>
       </div>
       <button class="fbn fbt" onclick="submitLead()">Quiero que me contacten →</button>
@@ -1088,7 +1109,7 @@ select.finp{appearance:none;cursor:pointer}
   <div class="modal mw">
     <button class="mcl" onclick="closeM('payment')">×</button>
     <h3 class="mtit">Completar suscripción</h3><p class="msub">Tu pago está protegido con cifrado SSL 256-bit.</p>
-    <div class="payb"><div><div class="pyn" id="py-n">Plan Familiar</div><div class="pyno">Facturación mensual · Cancelá cuando quieras</div></div><div class="pyp" id="py-p">$15/mes</div></div>
+    <div class="payb"><div><div class="pyn" id="py-n">Plan Familia</div><div class="pyno">Facturación mensual · Cancelá cuando quieras</div></div><div class="pyp" id="py-p">USD 152/mes</div></div>
     <div class="fr"><div class="fg2"><label class="flbl">Nombre completo</label><input class="finp" type="text" placeholder="Carlos García"></div><div class="fg2"><label class="flbl">Email</label><input class="finp" type="email" placeholder="tu@email.com"></div></div>
     <div class="cf"><div class="cfl">Número de tarjeta</div><input class="cfi" type="text" placeholder="1234 5678 9012 3456" maxlength="19" oninput="fmtC(this)"></div>
     <div class="fr"><div class="cf"><div class="cfl">Vencimiento</div><input class="cfi" type="text" placeholder="MM / AA" maxlength="7"></div><div class="cf"><div class="cfl">CVV</div><input class="cfi" type="text" placeholder="•••" maxlength="4"></div></div>
@@ -1131,7 +1152,7 @@ select.finp{appearance:none;cursor:pointer}
         <p class="msub" style="margin:0 auto;max-width:360px">El perfil está listo. SELMI comenzará a acompañar a tu ser querido con conversaciones personalizadas, calidez y cuidado.</p>
         <div style="background:var(--cream2);border:1.5px solid var(--border);border-radius:16px;padding:20px;margin:24px 0;text-align:left"><div style="font-size:11px;color:var(--sage2);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px">Perfil creado</div><div style="font-size:14px;color:var(--text2);line-height:2.1">✓ Información personal configurada<br>✓ Gustos y temas favoritos guardados<br>✓ Condiciones de salud registradas<br>✓ SELMI personalizada y lista</div></div>
         <button class="fbn fbt" onclick="closeAll()">Empezar a hablar con SELMI →</button>
-        <button class="fbn fbg" onclick="closeM('profile');openM('payment')" style="margin-top:8px">Ver planes Premium</button>
+        <button class="fbn fbg" onclick="closeM('profile');openM('payment')" style="margin-top:8px">Ver planes</button>
       </div>
     </div>
   </div>
@@ -1208,9 +1229,9 @@ function showL(){document.getElementById('vr').style.display='none';document.get
 function startW(){closeM('login');openM('profile')}
 function goPrf(){closeM('payment');openM('profile')}
 function openPayment(plan,price){document.getElementById('py-n').textContent='Plan '+plan;document.getElementById('py-p').textContent='$'+price+'/mes';openM('payment')}
-var _leadPlan='SELMI Completo';
+var _leadPlan='SELMI Plus';
 function openLead(plan){
-  _leadPlan=plan||'SELMI Completo';
+  _leadPlan=plan||'SELMI Plus';
   selectLeadPlan(_leadPlan);
   document.getElementById('lead-form').style.display='block';
   document.getElementById('lead-ok').style.display='none';
@@ -1218,8 +1239,8 @@ function openLead(plan){
 }
 function selectLeadPlan(plan){
   _leadPlan=plan;
-  ['lp-esencial','lp-completo','lp-premium'].forEach(function(id){document.getElementById(id).classList.remove('sel')});
-  var map={'SELMI Esencial':'lp-esencial','SELMI Completo':'lp-completo','SELMI Premium':'lp-premium'};
+  ['lp-entry','lp-basico','lp-plus','lp-familia'].forEach(function(id){document.getElementById(id).classList.remove('sel')});
+  var map={'SELMI Entry':'lp-entry','SELMI Básico':'lp-basico','SELMI Plus':'lp-plus','SELMI Familia':'lp-familia'};
   if(map[plan]) document.getElementById(map[plan]).classList.add('sel');
 }
 function submitLead(){
