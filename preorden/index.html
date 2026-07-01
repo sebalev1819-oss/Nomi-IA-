@@ -27,11 +27,30 @@ a{color:var(--terra-btn)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 h1,h2,h3{font-family:'Inter','Nunito Sans',sans-serif;letter-spacing:-.5px;line-height:1.12}
 
-/* HEADER */
-header{position:sticky;top:0;z-index:100;background:rgba(248,249,252,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center}
-header .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
-.brand{font-family:'Inter',sans-serif;font-weight:800;font-size:20px;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
-.hbadge-top{font-size:12px;font-weight:700;color:#fff;background:var(--terra-btn);padding:5px 14px;border-radius:100px}
+/* HEADER (idéntico al sitio) */
+header{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;background:rgba(244,247,250,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+header.sc{box-shadow:var(--sh)}
+.logo{display:flex;align-items:center;cursor:pointer;text-decoration:none}
+.logo svg{height:60px;width:auto;transition:transform .2s,filter .2s}
+.logo svg:hover{transform:scale(1.05);filter:brightness(1.08)}
+nav{display:flex;gap:32px}
+nav a{font-size:14px;color:var(--text2);text-decoration:none;transition:color .2s}
+nav a:hover{color:var(--terra-btn)}
+.hbtns{display:flex;gap:10px}
+.bg{background:none;border:1.5px solid var(--border2);color:var(--text);font-family:inherit;font-size:13px;font-weight:500;padding:8px 20px;border-radius:100px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center}
+.bg:hover{border-color:var(--terra-btn);color:var(--terra-btn)}
+.bp{background:var(--terra-btn);color:#fff;border:none;font-family:inherit;font-size:13px;font-weight:700;padding:9px 22px;border-radius:100px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center}
+.bp:hover{background:#2e8f78;transform:translateY(-1px);box-shadow:0 6px 20px rgba(63,166,140,.3)}
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001}
+.hbg span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+.hbg.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hbg.on span:nth-child(2){opacity:0}
+.hbg.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-nav{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 18px;flex-direction:column;gap:0;z-index:999;box-shadow:0 4px 24px rgba(15,30,46,.08)}
+.mob-nav.on{display:flex}
+.mob-nav a{display:block;padding:14px 0;font-size:16px;font-weight:500;color:var(--text);border-bottom:1px solid var(--border);text-decoration:none}
+.mob-nav a:last-child{border-bottom:none}
+.mob-nav .mob-cta{margin-top:16px;display:flex;flex-direction:column;gap:10px}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;font-weight:700;border-radius:100px;cursor:pointer;border:none;transition:all .2s;text-decoration:none;text-align:center}
@@ -46,7 +65,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;width
 .btn-block{width:100%}
 
 /* HERO */
-.hero{padding:64px 0 40px;text-align:center;background:
+.hero{padding:112px 0 40px;text-align:center;background:
   radial-gradient(ellipse 600px 300px at 30% 0%,rgba(122,219,208,.18),transparent 60%),
   radial-gradient(ellipse 600px 300px at 80% 20%,rgba(197,168,232,.16),transparent 60%)}
 .pill{display:inline-flex;align-items:center;gap:8px;background:var(--okbg);border:1px solid rgba(63,166,140,.3);color:var(--terra-btn);font-size:13px;font-weight:700;padding:7px 18px;border-radius:100px;margin-bottom:22px}
@@ -154,26 +173,78 @@ section{padding:56px 0}
 .close-cta h2{font-size:clamp(26px,4vw,38px);font-weight:800}
 .close-cta p{opacity:.8;margin:12px 0 26px;font-size:16px}
 
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--text3);font-size:13px;margin-top:40px}
-footer a{color:var(--terra-btn);text-decoration:none}
+/* FOOTER (idéntico al sitio) */
+footer{background:var(--text);padding:60px 24px 32px;margin-top:40px}
+.ftop{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.flogo{margin-bottom:12px}
+.fdesc{font-size:14px;color:rgba(251,245,235,.5);line-height:1.7}
+.fh{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(251,245,235,.4);margin-bottom:16px}
+.flinks{display:flex;flex-direction:column;gap:10px}
+.flinks a{font-size:14px;color:rgba(251,245,235,.6);text-decoration:none;transition:color .2s;cursor:pointer}
+.flinks a:hover{color:#7ADBD0}
+.fbot{max-width:1100px;margin:28px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fcopy{font-size:12px;color:rgba(251,245,235,.38)}
 
+@media (max-width:900px){
+  header{padding:0 20px}
+  nav{display:none}
+  .ftop{grid-template-columns:1fr 1fr}
+}
 @media (max-width:760px){
   .ps-grid,.how,.plans{grid-template-columns:1fr}
   .fgrid{grid-template-columns:1fr}
   .form-wrap{padding:22px}
   section{padding:40px 0}
 }
+@media (max-width:640px){
+  header{padding:0 18px}
+  nav{display:none}
+  .hbtns{display:none}
+  .hbg{display:flex}
+  .ftop{grid-template-columns:1fr;gap:28px}
+}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <a href="/" class="brand">SELMI</a>
-    <span class="hbadge-top">30% OFF · Preventa AR</span>
+<header id="hdr">
+  <a class="logo" href="/" aria-label="SELMI">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" height="60" role="img" aria-label="SELMI">
+      <defs>
+        <linearGradient id="selmiGradHdr" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#7ADBD0"/><stop offset="40%" stop-color="#A8C0E8"/>
+          <stop offset="70%" stop-color="#C5A8E8"/><stop offset="100%" stop-color="#D4A8D8"/>
+        </linearGradient>
+      </defs>
+      <rect x="2" y="4" width="196" height="52" rx="18" ry="18" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+      <rect x="6" y="8" width="188" height="44" rx="14" ry="14" fill="none" stroke="#f0f0f4" stroke-width="1"/>
+      <text x="100" y="40" font-family="Inter, Nunito, sans-serif" font-weight="800" font-size="28" letter-spacing="4" text-anchor="middle" fill="url(#selmiGradHdr)">SELMI</text>
+    </svg>
+  </a>
+  <nav>
+    <a href="/#dispositivo">El dispositivo</a>
+    <a href="/#para-quien">Para quién</a>
+    <a href="/#como-funciona">Cómo funciona</a>
+    <a href="/#planes">Planes</a>
+    <a href="#preorden">Preorden</a>
+  </nav>
+  <div class="hbtns">
+    <a class="bg" href="/">← Volver al sitio</a>
+    <a class="bp" href="#preorden">Preordenar 30% OFF</a>
   </div>
+  <button class="hbg" id="hbg-btn" onclick="toggleMobNav()" aria-label="Menú"><span></span><span></span><span></span></button>
 </header>
+
+<div class="mob-nav" id="mob-nav">
+  <a href="/#dispositivo" onclick="closeMobNav()">El dispositivo</a>
+  <a href="/#para-quien" onclick="closeMobNav()">Para quién</a>
+  <a href="/#como-funciona" onclick="closeMobNav()">Cómo funciona</a>
+  <a href="/#planes" onclick="closeMobNav()">Planes</a>
+  <a href="#preorden" onclick="closeMobNav()">Preorden</a>
+  <div class="mob-cta">
+    <a class="bp" href="#preorden" onclick="closeMobNav()" style="justify-content:center">Preordenar con 30% OFF →</a>
+  </div>
+</div>
 
 <!-- ══════════ HERO ══════════ -->
 <section class="hero">
@@ -419,10 +490,27 @@ footer a{color:var(--terra-btn);text-decoration:none}
 </section>
 
 <footer>
-  <div class="wrap">
-    <p><strong>SELMI</strong> · Proyecto en etapa de lanzamiento en Argentina · <a href="mailto:info@selmi.ai">info@selmi.ai</a></p>
-    <p style="margin-top:8px"><a href="/#terminos">Términos y Condiciones</a> · <a href="/#privacidad">Política de Privacidad</a></p>
+  <div class="ftop">
+    <div>
+      <div class="flogo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" height="38" role="img" aria-label="SELMI" style="display:block;margin-bottom:10px">
+          <defs>
+            <linearGradient id="selmiGradFtr" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7ADBD0"/><stop offset="40%" stop-color="#A8C0E8"/>
+              <stop offset="70%" stop-color="#C5A8E8"/><stop offset="100%" stop-color="#D4A8D8"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="4" width="196" height="52" rx="18" ry="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <text x="100" y="40" font-family="Inter, Nunito, sans-serif" font-weight="800" font-size="28" letter-spacing="4" text-anchor="middle" fill="url(#selmiGradFtr)">SELMI</text>
+        </svg>
+      </div>
+      <div class="fdesc">Proyecto en etapa de lanzamiento en Argentina. Compañía, seguridad y tranquilidad para adultos mayores que viven solos y sus familias.</div>
+    </div>
+    <div><div class="fh">Producto</div><div class="flinks"><a href="/#dispositivo">El dispositivo</a><a href="/#como-funciona">Cómo funciona</a><a href="/#planes">Planes y precios</a><a href="#preorden">Preordenar 30% OFF</a></div></div>
+    <div><div class="fh">Legal</div><div class="flinks"><a href="/#terminos">Términos y Condiciones</a><a href="/#privacidad">Política de Privacidad</a><a href="/#privacidad">Derechos ARCO</a></div></div>
+    <div><div class="fh">Contacto</div><div class="flinks"><a href="mailto:info@selmi.ai">info@selmi.ai</a><a>Buenos Aires, Argentina</a></div></div>
   </div>
+  <div class="fbot"><div class="fcopy">© 2026 SELMI Health · Buenos Aires, Argentina · Preventa de lanzamiento</div></div>
 </footer>
 
 <script>
@@ -487,6 +575,11 @@ function gaEvent(name, params){ if(window.gtag) gtag('event', name, params||{});
 
 loadPixel(); loadGA4();
 gaEvent('page_view', { page_title:'preorden' });
+
+/* ── Header: menú mobile + sombra al scrollear (igual que el sitio) ──── */
+function toggleMobNav(){ document.getElementById('mob-nav').classList.toggle('on'); document.getElementById('hbg-btn').classList.toggle('on'); }
+function closeMobNav(){ document.getElementById('mob-nav').classList.remove('on'); document.getElementById('hbg-btn').classList.remove('on'); }
+window.addEventListener('scroll', () => { document.getElementById('hdr').classList.toggle('sc', window.scrollY > 10); });
 
 /* ── Render de planes (hydrate desde ERP con fallback) ──────────────── */
 const money = (n) => "ARS " + Number(n).toLocaleString("es-AR");
