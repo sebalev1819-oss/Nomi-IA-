@@ -1,0 +1,19 @@
+# Configuración de deploy de selmi.ai (sitio estático).
+# El sitio se sirve tal cual desde la raíz del repo (sin build).
+
+[build]
+  publish = "."
+
+# ── Redirect www → apex ──────────────────────────────────────────────
+# Hace que www.selmi.ai/... redirija 301 a selmi.ai/... (dominio canónico).
+# IMPORTANTE: esto solo se aplica una vez que www.selmi.ai APUNTA a Netlify
+# (ver pasos en Domain management). El redirect es la mitad de código; la otra
+# mitad es el registro DNS, que se configura en el panel de Netlify.
+[[redirects]]
+  from = "https://www.selmi.ai/*"
+  to = "https://selmi.ai/:splat"
+  status = 301
+  force = true
+
+# /preorden se sirve solo desde preorden/index.html (Netlify resuelve la
+# carpeta con index automáticamente). No hace falta redirect para eso.
