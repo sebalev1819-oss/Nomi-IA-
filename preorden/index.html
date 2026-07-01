@@ -340,6 +340,9 @@ footer{background:var(--text);padding:60px 24px 32px;margin-top:40px}
 
   <div class="wrap">
     <div class="form-wrap">
+      <div id="preorderNotice" style="display:none;background:var(--okbg);border:1px solid rgba(63,166,140,.3);border-radius:14px;padding:16px 18px;margin-bottom:20px;font-size:15px;color:var(--terra-btn)">
+        <strong>🎉 Estamos abriendo las preórdenes.</strong> Dejanos tus datos y te contactamos apenas confirmemos los cupos de lanzamiento. No te cobramos nada.
+      </div>
       <div class="form-msg" id="formMsg"></div>
 
       <div class="success-box" id="successBox">
@@ -524,6 +527,12 @@ const CONFIG = {
   ERP_API_BASE: "https://selmierp.netlify.app", // ← URL del ERP (deploy). Ajustar si cambia.
   META_PIXEL_ID: "",        // ← META_PIXEL_ID (dejar vacío = no carga Pixel)
   GA4_MEASUREMENT_ID: "",   // ← GA4_MEASUREMENT_ID (dejar vacío = no carga GA4)
+  // ⚠️ PONER true CUANDO EL ERP ESTÉ EN PRODUCCIÓN (feat/preorders mergeado a
+  // main + migración aplicada). Con false, el form NO postea al ERP (que aún no
+  // existe): arma un email a info@selmi.ai con los datos, así ninguna preorden
+  // se pierde, y muestra un aviso de "preórdenes abriendo pronto".
+  FORM_ENABLED: false,
+  INTERNAL_EMAIL: "info@selmi.ai",
 };
 
 /* Precios fallback (deben matchear preorder-utils.ts del ERP). Se sobrescriben
@@ -625,6 +634,12 @@ const form = document.getElementById("preorderForm");
 const msg = document.getElementById("formMsg");
 const submitBtn = document.getElementById("submitBtn");
 
+// Aviso "preórdenes abriendo pronto" mientras el ERP no esté activo.
+if (!CONFIG.FORM_ENABLED) {
+  document.getElementById("preorderNotice").style.display = "block";
+  submitBtn.textContent = "Reservar mi lugar";
+}
+
 function setErr(name, on){ const f=form.querySelector(`[name=${name}]`)?.closest('.field'); if(f) f.classList.toggle('err', on); }
 
 form.addEventListener("submit", async (e) => {
@@ -654,6 +669,35 @@ form.addEventListener("submit", async (e) => {
   submitBtn.disabled = true; submitBtn.textContent = "Enviando…";
   // evento Lead (intención de envío)
   fbTrack('Lead', { content_name:data.plan }); gaEvent('generate_lead', { plan:data.plan });
+
+  // ── Modo seguro: ERP aún no en producción → email a info@selmi.ai ────
+  // Nunca da error de red. La preorden llega igual (al correo del equipo).
+  if (!CONFIG.FORM_ENABLED) {
+    const planName = ({essential:"SELMI Esencial",complete:"SELMI Completo",premium:"SELMI Premium",undecided:"A definir"})[data.plan] || data.plan;
+    const subject = `Nueva preorden SELMI - ${data.fullName} - ${planName}`;
+    const body = [
+      "PREORDEN DESDE LA LANDING (modo previo al ERP)",
+      "", "COMPRADOR",
+      `Nombre: ${data.fullName}`, `Email: ${data.email}`, `Tel/WhatsApp: ${data.phone}`,
+      `Ciudad/Prov: ${[data.city,data.province].filter(Boolean).join(", ")||"-"}`,
+      "", "PREORDEN",
+      `Plan: ${planName}`, `Intención: ${data.buyerIntent}`, `Urgencia: ${data.urgency||"-"}`,
+      "", "ADULTO MAYOR",
+      `Nombre: ${data.elderlyName||"-"}`, `Edad: ${data.elderlyAge||"-"}`, `Vive solo: ${data.elderlyLivesAlone||"-"}`, `Necesidad: ${data.mainNeed||"-"}`,
+      `Comentarios: ${data.comments||"-"}`,
+      "", "ORIGEN",
+      `Fuente: ${data.source||"-"}`, `Campaña: ${campaign||"-"}`, `URL: ${data.landingPageUrl}`,
+    ].join("\n");
+    window.location.href = `mailto:${CONFIG.INTERNAL_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const sb = document.getElementById("successBox");
+    sb.querySelector("h3").textContent = "¡Gracias! Te abrimos tu correo con la preorden lista.";
+    sb.querySelector("p").innerHTML = `Tocá "Enviar" en el email que se abrió para mandárnosla. Si no se abrió solo, escribinos a <a href="mailto:${CONFIG.INTERNAL_EMAIL}">${CONFIG.INTERNAL_EMAIL}</a> y te tomamos la reserva. Un asesor se comunica para confirmar disponibilidad y el 30% OFF.`;
+    form.style.display = "none"; sb.style.display = "block";
+    sb.scrollIntoView({behavior:"smooth",block:"center"});
+    fbTrack('CompleteRegistration', { content_name:data.plan }); gaEvent('preorder_submit', { plan:data.plan, mode:'email_fallback' });
+    submitBtn.disabled = false; submitBtn.textContent = "Enviar preorden";
+    return;
+  }
 
   try {
     const res = await fetch(CONFIG.ERP_API_BASE + "/api/preorders", {
