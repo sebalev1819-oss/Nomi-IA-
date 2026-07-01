@@ -340,9 +340,6 @@ footer{background:var(--text);padding:60px 24px 32px;margin-top:40px}
 
   <div class="wrap">
     <div class="form-wrap">
-      <div id="preorderNotice" style="display:none;background:var(--okbg);border:1px solid rgba(63,166,140,.3);border-radius:14px;padding:16px 18px;margin-bottom:20px;font-size:15px;color:var(--terra-btn)">
-        <strong>🎉 Estamos abriendo las preórdenes.</strong> Dejanos tus datos y te contactamos apenas confirmemos los cupos de lanzamiento. No te cobramos nada.
-      </div>
       <div class="form-msg" id="formMsg"></div>
 
       <div class="success-box" id="successBox">
@@ -351,7 +348,20 @@ footer{background:var(--text);padding:60px 24px 32px;margin-top:40px}
         <p>Un asesor se va a comunicar con vos para confirmar disponibilidad, el precio especial de lanzamiento y los próximos pasos.</p>
       </div>
 
-      <form id="preorderForm" novalidate>
+      <!-- Netlify Forms: name+data-netlify hacen que Netlify capture los envíos
+           (panel → Forms) y pueda notificar por email a info@selmi.ai.
+           El honeypot "website" también se lo declaramos a Netlify. -->
+      <form id="preorderForm" name="preorden" method="POST" data-netlify="true" netlify-honeypot="website" novalidate>
+        <input type="hidden" name="form-name" value="preorden">
+        <!-- tracking (los llena JS al cargar, así Netlify los captura también) -->
+        <input type="hidden" name="campaign" id="h_campaign">
+        <input type="hidden" name="utm_source" id="h_utm_source">
+        <input type="hidden" name="utm_medium" id="h_utm_medium">
+        <input type="hidden" name="utm_campaign" id="h_utm_campaign">
+        <input type="hidden" name="utm_content" id="h_utm_content">
+        <input type="hidden" name="utm_term" id="h_utm_term">
+        <input type="hidden" name="referrer" id="h_referrer">
+        <input type="hidden" name="landing_page_url" id="h_landing_url">
         <!-- honeypot anti-spam -->
         <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -527,12 +537,11 @@ const CONFIG = {
   ERP_API_BASE: "https://selmierp.netlify.app", // ← URL del ERP (deploy). Ajustar si cambia.
   META_PIXEL_ID: "",        // ← META_PIXEL_ID (dejar vacío = no carga Pixel)
   GA4_MEASUREMENT_ID: "",   // ← GA4_MEASUREMENT_ID (dejar vacío = no carga GA4)
-  // ⚠️ PONER true CUANDO EL ERP ESTÉ EN PRODUCCIÓN (feat/preorders mergeado a
-  // main + migración aplicada). Con false, el form NO postea al ERP (que aún no
-  // existe): arma un email a info@selmi.ai con los datos, así ninguna preorden
-  // se pierde, y muestra un aviso de "preórdenes abriendo pronto".
+  // El form SIEMPRE envía vía Netlify Forms (captura del hosting + email a
+  // info@selmi.ai configurable en Netlify → Forms → notifications).
+  // FORM_ENABLED=true suma el POST al ERP (lead estructurado + emails Resend).
+  // Ponerlo en true cuando /api/preorders/config responda 200 en producción.
   FORM_ENABLED: false,
-  INTERNAL_EMAIL: "info@selmi.ai",
 };
 
 /* Precios fallback (deben matchear preorder-utils.ts del ERP). Se sobrescriben
@@ -634,11 +643,15 @@ const form = document.getElementById("preorderForm");
 const msg = document.getElementById("formMsg");
 const submitBtn = document.getElementById("submitBtn");
 
-// Aviso "preórdenes abriendo pronto" mientras el ERP no esté activo.
-if (!CONFIG.FORM_ENABLED) {
-  document.getElementById("preorderNotice").style.display = "block";
-  submitBtn.textContent = "Reservar mi lugar";
-}
+// Tracking → hidden inputs, para que Netlify Forms los capture en cada envío.
+document.getElementById("h_campaign").value = campaign;
+document.getElementById("h_utm_source").value = UTM.utmSource;
+document.getElementById("h_utm_medium").value = UTM.utmMedium;
+document.getElementById("h_utm_campaign").value = UTM.utmCampaign;
+document.getElementById("h_utm_content").value = UTM.utmContent;
+document.getElementById("h_utm_term").value = UTM.utmTerm;
+document.getElementById("h_referrer").value = document.referrer || "";
+document.getElementById("h_landing_url").value = window.location.href;
 
 function setErr(name, on){ const f=form.querySelector(`[name=${name}]`)?.closest('.field'); if(f) f.classList.toggle('err', on); }
 
@@ -670,57 +683,47 @@ form.addEventListener("submit", async (e) => {
   // evento Lead (intención de envío)
   fbTrack('Lead', { content_name:data.plan }); gaEvent('generate_lead', { plan:data.plan });
 
-  // ── Modo seguro: ERP aún no en producción → email a info@selmi.ai ────
-  // Nunca da error de red. La preorden llega igual (al correo del equipo).
-  if (!CONFIG.FORM_ENABLED) {
-    const planName = ({essential:"SELMI Esencial",complete:"SELMI Completo",premium:"SELMI Premium",undecided:"A definir"})[data.plan] || data.plan;
-    const subject = `Nueva preorden SELMI - ${data.fullName} - ${planName}`;
-    const body = [
-      "PREORDEN DESDE LA LANDING (modo previo al ERP)",
-      "", "COMPRADOR",
-      `Nombre: ${data.fullName}`, `Email: ${data.email}`, `Tel/WhatsApp: ${data.phone}`,
-      `Ciudad/Prov: ${[data.city,data.province].filter(Boolean).join(", ")||"-"}`,
-      "", "PREORDEN",
-      `Plan: ${planName}`, `Intención: ${data.buyerIntent}`, `Urgencia: ${data.urgency||"-"}`,
-      "", "ADULTO MAYOR",
-      `Nombre: ${data.elderlyName||"-"}`, `Edad: ${data.elderlyAge||"-"}`, `Vive solo: ${data.elderlyLivesAlone||"-"}`, `Necesidad: ${data.mainNeed||"-"}`,
-      `Comentarios: ${data.comments||"-"}`,
-      "", "ORIGEN",
-      `Fuente: ${data.source||"-"}`, `Campaña: ${campaign||"-"}`, `URL: ${data.landingPageUrl}`,
-    ].join("\n");
-    window.location.href = `mailto:${CONFIG.INTERNAL_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    const sb = document.getElementById("successBox");
-    sb.querySelector("h3").textContent = "¡Gracias! Te abrimos tu correo con la preorden lista.";
-    sb.querySelector("p").innerHTML = `Tocá "Enviar" en el email que se abrió para mandárnosla. Si no se abrió solo, escribinos a <a href="mailto:${CONFIG.INTERNAL_EMAIL}">${CONFIG.INTERNAL_EMAIL}</a> y te tomamos la reserva. Un asesor se comunica para confirmar disponibilidad y el 30% OFF.`;
-    form.style.display = "none"; sb.style.display = "block";
-    sb.scrollIntoView({behavior:"smooth",block:"center"});
-    fbTrack('CompleteRegistration', { content_name:data.plan }); gaEvent('preorder_submit', { plan:data.plan, mode:'email_fallback' });
-    submitBtn.disabled = false; submitBtn.textContent = "Enviar preorden";
-    return;
-  }
+  // ── Envío doble, directo desde la página ────────────────────────────
+  // 1) Netlify Forms (SIEMPRE): el hosting captura el envío y notifica por
+  //    email a info@selmi.ai (Forms → notifications). No depende del ERP.
+  // 2) ERP (si FORM_ENABLED): guarda el lead estructurado + emails Resend.
+  // Con que UNO de los dos entre, la preorden está a salvo.
+  let netlifyOk = false, erpOk = false, erpErr = null;
 
   try {
-    const res = await fetch(CONFIG.ERP_API_BASE + "/api/preorders", {
-      method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(data),
+    const params = new URLSearchParams();
+    new FormData(form).forEach((v, k) => params.append(k, v));
+    const rn = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
     });
-    const out = await res.json().catch(()=>({}));
-    if(res.ok && out.ok){
-      form.style.display = "none";
-      document.getElementById("successBox").style.display = "block";
-      document.getElementById("successBox").scrollIntoView({behavior:"smooth",block:"center"});
-      fbTrack('CompleteRegistration', { content_name:data.plan });
-      gaEvent('preorder_submit', { plan:data.plan, code: out.code });
-    } else {
-      msg.className="form-msg bad";
-      msg.textContent = out.error || "No pudimos enviar tu preorden. Probá de nuevo en un momento.";
-      msg.scrollIntoView({behavior:"smooth",block:"center"});
-    }
-  } catch(err){
-    msg.className="form-msg bad";
-    msg.textContent = "Hubo un problema de conexión. Probá de nuevo en un momento.";
-  } finally {
-    submitBtn.disabled = false; submitBtn.textContent = "Enviar preorden";
+    netlifyOk = rn.ok;
+  } catch (e) { /* seguimos con el ERP */ }
+
+  if (CONFIG.FORM_ENABLED) {
+    try {
+      const res = await fetch(CONFIG.ERP_API_BASE + "/api/preorders", {
+        method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(data),
+      });
+      const out = await res.json().catch(()=>({}));
+      erpOk = res.ok && out.ok;
+      if (!erpOk) erpErr = out.error;
+    } catch (e) { /* netlifyOk puede salvarla igual */ }
   }
+
+  if (netlifyOk || erpOk) {
+    form.style.display = "none";
+    document.getElementById("successBox").style.display = "block";
+    document.getElementById("successBox").scrollIntoView({behavior:"smooth",block:"center"});
+    fbTrack('CompleteRegistration', { content_name:data.plan });
+    gaEvent('preorder_submit', { plan:data.plan, via: erpOk ? 'erp' : 'netlify_forms' });
+  } else {
+    msg.className="form-msg bad";
+    msg.textContent = erpErr || "No pudimos enviar tu preorden. Probá de nuevo o escribinos a info@selmi.ai.";
+    msg.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+  submitBtn.disabled = false; submitBtn.textContent = "Enviar preorden";
 });
 </script>
 </body>
