@@ -313,7 +313,7 @@ select.finp{appearance:none;cursor:pointer}
 
 .dev-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 
-/* â”€â”€ RESPONSIVE TABLET (â‰¤900px) â”€â”€ */
+/* ── RESPONSIVE TABLET (≤900px) ── */
 @media(max-width:900px){
   header{padding:0 20px}
   nav{display:none}
@@ -325,7 +325,7 @@ select.finp{appearance:none;cursor:pointer}
   #dispositivo .container > div > div[style*="grid"]{grid-template-columns:1fr !important;gap:40px !important}
 }
 
-/* â”€â”€ RESPONSIVE MOBILE (â‰¤640px) â”€â”€ */
+/* ── RESPONSIVE MOBILE (≤640px) ── */
 @media(max-width:640px){
   section{padding:64px 18px}
   /* Header */
@@ -686,7 +686,7 @@ select.finp{appearance:none;cursor:pointer}
           <div><div style="font-size:15px;font-weight:600;color:var(--text)">SELMI</div><div class="non">En preventa</div></div>
         </div>
         <div class="cbody">
-          <div class="msg"><div class="mav n">N</div><div class="bub n">¡Buenos días, Dora! ☀ï¸ ¿Cómo dormiste esta noche?</div></div>
+          <div class="msg"><div class="mav n">N</div><div class="bub n">¡Buenos días, Dora! ☀️ ¿Cómo dormiste esta noche?</div></div>
           <div class="msg u"><div class="mav u">D</div><div class="bub u">Bien, gracias. Aunque extrañé a mis nietos.</div></div>
           <div class="msg"><div class="mav n">N</div><div class="bub n">Lo entiendo. ¿Sabés que tu nieto Marcos cumple años esta semana? ¿Le grabamos un mensaje juntas?</div></div>
           <div class="msg u"><div class="mav u">D</div><div class="bub u">¡Qué buena idea! Me encantaría.</div></div>
@@ -879,8 +879,8 @@ select.finp{appearance:none;cursor:pointer}
       <div style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,rgba(37,99,168,.1),rgba(14,165,121,.1));border:1px solid rgba(37,99,168,.2);border-radius:100px;padding:10px 24px;font-size:13px;color:var(--text2);flex-wrap:wrap;justify-content:center">
         <span>✅ Kit completo</span><span style="color:var(--border2)">·</span>
         <span>📱 Tablet configurada</span><span style="color:var(--border2)">·</span>
-        <span>👨â€👩â€👦 App familiar</span><span style="color:var(--border2)">·</span>
-        <span>📷 Cámara 360Â°</span><span style="color:var(--border2)">·</span>
+        <span>👨‍👩‍👦 App familiar</span><span style="color:var(--border2)">·</span>
+        <span>📷 Cámara 360°</span><span style="color:var(--border2)">·</span>
         <span>🔔 Alertas</span><span style="color:var(--border2)">·</span>
         <span>🩺 Telemedicina</span><span style="color:var(--border2)">·</span>
         <span>🛟 Soporte en español</span>
@@ -1067,7 +1067,7 @@ select.finp{appearance:none;cursor:pointer}
     <!-- SUCCESS VIEW -->
     <div id="lead-ok" style="display:none">
       <div class="lead-ok">
-        <div class="ok-ico">ðŸŽ‰</div>
+        <div class="ok-ico">🎉</div>
         <h3>¡Gracias, te contactamos pronto!</h3>
         <p>Recibimos tu consulta sobre <strong id="lead-plan-ok"></strong>.<br>Un asesor de SELMI se va a comunicar con vos en las próximas horas por WhatsApp o email.</p>
         <button class="fbn fbt" onclick="closeM('lead')">Cerrar</button>
@@ -1114,7 +1114,7 @@ select.finp{appearance:none;cursor:pointer}
     <div class="cf"><div class="cfl">Número de tarjeta</div><input class="cfi" type="text" placeholder="1234 5678 9012 3456" maxlength="19" oninput="fmtC(this)"></div>
     <div class="fr"><div class="cf"><div class="cfl">Vencimiento</div><input class="cfi" type="text" placeholder="MM / AA" maxlength="7"></div><div class="cf"><div class="cfl">CVV</div><input class="cfi" type="text" placeholder="•••" maxlength="4"></div></div>
     <button class="fbn fbs" onclick="goPrf()" style="margin-top:16px">Confirmar suscripción →</button>
-    <div class="secb"><div class="sbi">🔒 SSL 256-bit</div><div class="sbi">✓ PCI DSS</div><div class="sbi">â†© 30 días garantía</div></div>
+    <div class="secb"><div class="sbi">🔒 SSL 256-bit</div><div class="sbi">✓ PCI DSS</div><div class="sbi">↩ 30 días garantía</div></div>
   </div>
 </div>
 
@@ -1125,25 +1125,25 @@ select.finp{appearance:none;cursor:pointer}
     <div class="pr" id="prog"><div class="pb f"></div><div class="pb"></div><div class="pb"></div><div class="pb"></div></div>
     <div class="ws on" id="ws1">
       <h3 class="mtit">¿Para quién es SELMI?</h3><p class="msub">Contanos sobre la persona que va a usar SELMI.</p>
-      <div class="avg"><div class="avo sel" onclick="sAv(this)">👵</div><div class="avo" onclick="sAv(this)">ðŸ‘´</div><div class="avo" onclick="sAv(this)">🌸</div><div class="avo" onclick="sAv(this)">ðŸŒ¿</div><div class="avo" onclick="sAv(this)">☀ï¸</div><div class="avo" onclick="sAv(this)">ðŸ¦‹</div></div>
-      <div class="fg2" style="margin-top:20px"><label class="flbl">Nombre de la persona</label><input class="finp" type="text" placeholder="Ej: Abuela Rosa, Don Carlosâ€¦"></div>
-      <div class="fr"><div class="fg2"><label class="flbl">Edad</label><input class="finp" type="number" placeholder="78" min="50" max="120"></div><div class="fg2"><label class="flbl">País</label><select class="finp"><option>País</option><option>Argentina ðŸ‡¦ðŸ‡·</option><option>México ðŸ‡²ðŸ‡½</option><option>Chile ðŸ‡¨ðŸ‡±</option><option>Colombia ðŸ‡¨ðŸ‡´</option><option>Uruguay ðŸ‡ºðŸ‡¾</option><option>Perú ðŸ‡µðŸ‡ª</option><option>Brasil ðŸ‡§ðŸ‡·</option><option>Otro</option></select></div></div>
+      <div class="avg"><div class="avo sel" onclick="sAv(this)">👵</div><div class="avo" onclick="sAv(this)">👴</div><div class="avo" onclick="sAv(this)">🌸</div><div class="avo" onclick="sAv(this)">🌿</div><div class="avo" onclick="sAv(this)">☀️</div><div class="avo" onclick="sAv(this)">🦋</div></div>
+      <div class="fg2" style="margin-top:20px"><label class="flbl">Nombre de la persona</label><input class="finp" type="text" placeholder="Ej: Abuela Rosa, Don Carlos…"></div>
+      <div class="fr"><div class="fg2"><label class="flbl">Edad</label><input class="finp" type="number" placeholder="78" min="50" max="120"></div><div class="fg2"><label class="flbl">País</label><select class="finp"><option>País</option><option>Argentina 🇦🇷</option><option>México 🇲🇽</option><option>Chile 🇨🇱</option><option>Colombia 🇨🇴</option><option>Uruguay 🇺🇾</option><option>Perú 🇵🇪</option><option>Brasil 🇧🇷</option><option>Otro</option></select></div></div>
       <button class="fbn fbt" onclick="wStep(2)">Continuar →</button>
     </div>
     <div class="ws" id="ws2">
       <h3 class="mtit">¿Qué le gusta hacer?</h3><p class="msub">SELMI va a hablar de sus temas favoritos.</p>
-      <div class="chips"><button class="chip" onclick="tc(this)">âš½ Fútbol</button><button class="chip" onclick="tc(this)">ðŸ“º Telenovelas</button><button class="chip" onclick="tc(this)">🎵 Música</button><button class="chip" onclick="tc(this)">ðŸ³ Cocina</button><button class="chip" onclick="tc(this)">ðŸ“– Leer</button><button class="chip" onclick="tc(this)">ðŸŒ± Jardín</button><button class="chip" onclick="tc(this)">ðŸ§© Juegos</button><button class="chip" onclick="tc(this)">ðŸ—žï¸ Noticias</button><button class="chip" onclick="tc(this)">👨â€👩â€ðŸ‘§ Familia</button><button class="chip" onclick="tc(this)">ðŸ™ Fe / religión</button><button class="chip" onclick="tc(this)">ðŸ• Animales</button><button class="chip" onclick="tc(this)">ðŸŽ¬ Películas</button></div>
+      <div class="chips"><button class="chip" onclick="tc(this)">âš½ Fútbol</button><button class="chip" onclick="tc(this)">📺 Telenovelas</button><button class="chip" onclick="tc(this)">🎵 Música</button><button class="chip" onclick="tc(this)">🍳 Cocina</button><button class="chip" onclick="tc(this)">📖 Leer</button><button class="chip" onclick="tc(this)">🌱 Jardín</button><button class="chip" onclick="tc(this)">🧩 Juegos</button><button class="chip" onclick="tc(this)">🗞️ Noticias</button><button class="chip" onclick="tc(this)">👨‍👩‍👧 Familia</button><button class="chip" onclick="tc(this)">🙏 Fe / religión</button><button class="chip" onclick="tc(this)">🐕 Animales</button><button class="chip" onclick="tc(this)">🎬 Películas</button></div>
       <div style="margin-top:24px"><div class="flbl">¿Con qué idioma se siente más cómoda?</div><div class="chips" style="margin-top:10px"><button class="chip sel" onclick="ss2(this,'l')">Español rioplatense</button><button class="chip" onclick="ss2(this,'l')">Español neutro</button><button class="chip" onclick="ss2(this,'l')">Portugués</button></div></div>
       <button class="fbn fbt" onclick="wStep(3)" style="margin-top:24px">Continuar →</button>
-      <button class="fbn fbg" onclick="wStep(1)">â† Volver</button>
+      <button class="fbn fbg" onclick="wStep(1)">← Volver</button>
     </div>
     <div class="ws" id="ws3">
       <h3 class="mtit">Condiciones y cuidados</h3><p class="msub">Cuanto más sepa SELMI, mejor puede ayudar.</p>
       <div style="margin-bottom:20px"><div class="flbl" style="margin-bottom:10px">Condiciones de salud (opcional)</div><div class="chips"><button class="chip" onclick="tc(this)">Diabetes</button><button class="chip" onclick="tc(this)">Hipertensión</button><button class="chip" onclick="tc(this)">Deterioro cognitivo leve</button><button class="chip" onclick="tc(this)">Problemas cardíacos</button><button class="chip" onclick="tc(this)">Depresión / ansiedad</button><button class="chip" onclick="tc(this)">Ninguna conocida</button></div></div>
       <div style="margin-bottom:20px"><div class="flbl" style="margin-bottom:10px">¿Con qué frecuencia SELMI inicia conversación?</div><div class="chips"><button class="chip" onclick="ss2(this,'f')">Varias veces al día</button><button class="chip sel" onclick="ss2(this,'f')">Una vez por mañana</button><button class="chip" onclick="ss2(this,'f')">Solo responde</button></div></div>
-      <div class="fg2"><label class="flbl">¿Algo más que SELMI deba saber?</label><textarea class="finp" rows="3" style="resize:none;margin-top:6px" placeholder="Ej: Tiene sordera leve. Le gusta hablar de sus nietos. Medicación a las 8am y 8pmâ€¦"></textarea></div>
+      <div class="fg2"><label class="flbl">¿Algo más que SELMI deba saber?</label><textarea class="finp" rows="3" style="resize:none;margin-top:6px" placeholder="Ej: Tiene sordera leve. Le gusta hablar de sus nietos. Medicación a las 8am y 8pm…"></textarea></div>
       <button class="fbn fbt" onclick="wStep(4)" style="margin-top:16px">Crear perfil →</button>
-      <button class="fbn fbg" onclick="wStep(2)">â† Volver</button>
+      <button class="fbn fbg" onclick="wStep(2)">← Volver</button>
     </div>
     <div class="ws" id="ws4">
       <div style="text-align:center;padding:16px 0">
@@ -1166,19 +1166,19 @@ select.finp{appearance:none;cursor:pointer}
     <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:12px">Documento Legal</div>
     <div class="lh1">Términos y Condiciones de Uso</div>
     <p class="lp" style="color:var(--text3);font-size:13px;margin-bottom:20px">Asistente Digital SELMI · República Argentina · Versión 2.0</p>
-    <div class="lbx w"><div class="lbt">âš ï¸ Aviso importante</div><p class="lp">Al acceder o utilizar el Servicio, usted acepta estos Términos. Si no está de acuerdo, no podrá utilizarlo. Este documento es un contrato vinculante conforme a la legislación argentina.</p></div>
+    <div class="lbx w"><div class="lbt">⚠️ Aviso importante</div><p class="lp">Al acceder o utilizar el Servicio, usted acepta estos Términos. Si no está de acuerdo, no podrá utilizarlo. Este documento es un contrato vinculante conforme a la legislación argentina.</p></div>
     <div class="lh2">1. Responsable del Servicio</div>
     <p class="lp">SELMI Health, domicilio legal en C.A.B.A., República Argentina. Contacto: <a href="mailto:info@selmi.ai">info@selmi.ai</a>.</p>
     <div class="lh2">2. Marco Legal Aplicable</div>
-    <div class="lbx i"><div class="lbt">â„¹ï¸ Legislación argentina</div><ul class="lul"><li>Ley NÂ° 25.326 — Protección de Datos Personales</li><li>Ley NÂ° 24.240 — Defensa del Consumidor</li><li>Ley NÂ° 27.078 — Argentina Digital</li><li>Código Civil y Comercial de la Nación</li></ul></div>
+    <div class="lbx i"><div class="lbt">ℹ️ Legislación argentina</div><ul class="lul"><li>Ley N° 25.326 — Protección de Datos Personales</li><li>Ley N° 24.240 — Defensa del Consumidor</li><li>Ley N° 27.078 — Argentina Digital</li><li>Código Civil y Comercial de la Nación</li></ul></div>
     <div class="lh2">4. Requisitos de Uso</div>
     <p class="lp">El registrante debe ser mayor de 18 años. El Servicio puede configurarlo un familiar en nombre del adulto mayor. No está dirigido a menores de 13 años.</p>
     <div class="lh2">7. Protección de Datos (Ley 25.326)</div>
     <p class="lp">Recopilamos datos de registro, perfil de salud e interacciones de voz/texto. Se usan exclusivamente para prestar el servicio. No vendemos datos a terceros.</p>
     <div class="lh2">8. Datos de Voz e Interacciones</div>
-    <div class="lbx ok"><div class="lbt">✅ Compromiso sobre IA</div><p class="lp">NO utilizamos conversaciones identificables para entrenar IA. Audio retenido máximo 90 días. El usuario puede reducirlo desde Configuración â€º Privacidad â€º Audio.</p></div>
+    <div class="lbx ok"><div class="lbt">✅ Compromiso sobre IA</div><p class="lp">NO utilizamos conversaciones identificables para entrenar IA. Audio retenido máximo 90 días. El usuario puede reducirlo desde Configuración › Privacidad › Audio.</p></div>
     <div class="lh2">10. Derechos ARCO</div>
-    <div class="lbx i"><div class="lbt">â„¹ï¸ Sus derechos</div><ul class="lul"><li><b>ACCESO:</b> conocer qué datos se tratan</li><li><b>RECTIFICACIÓN:</b> corregir datos incorrectos</li><li><b>CANCELACIÓN:</b> solicitar supresión de datos</li><li><b>OPOSICIÓN:</b> oponerse al tratamiento</li></ul></div>
+    <div class="lbx i"><div class="lbt">ℹ️ Sus derechos</div><ul class="lul"><li><b>ACCESO:</b> conocer qué datos se tratan</li><li><b>RECTIFICACIÓN:</b> corregir datos incorrectos</li><li><b>CANCELACIÓN:</b> solicitar supresión de datos</li><li><b>OPOSICIÓN:</b> oponerse al tratamiento</li></ul></div>
     <p class="lp">Contacto: <a href="mailto:info@selmi.ai">info@selmi.ai</a> — Asunto "Ejercicio Derechos ARCO". Plazos: Acceso 30 días hábiles; Rectificación/Cancelación/Oposición 5 días hábiles. AAIP: 0800-333-1933.</p>
     <div class="lh2">11. Derechos del Consumidor (Ley 24.240)</div>
     <div class="lbx ok"><div class="lbt">✅ Arrepentimiento y reintegros</div><ul class="lul"><li>Podés revocar dentro de los 10 días corridos sin costo.</li><li>Cancelación anticipada: reintegro proporcional a días no consumidos.</li><li>Devolución en 10 días hábiles al mismo medio de pago.</li></ul></div>
@@ -1201,13 +1201,13 @@ select.finp{appearance:none;cursor:pointer}
     <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:12px">Documento Legal</div>
     <div class="lh1">Política de Privacidad</div>
     <p class="lp" style="color:var(--text3);font-size:13px;margin-bottom:20px">SELMI Health · Ley 25.326 · GDPR</p>
-    <div class="lbx i"><div class="lbt">â„¹ï¸ En palabras simples</div><p class="lp">Tu privacidad es sagrada. No vendemos tus datos. Vos sos dueño de toda tu información y podés eliminarla cuando quieras.</p></div>
+    <div class="lbx i"><div class="lbt">ℹ️ En palabras simples</div><p class="lp">Tu privacidad es sagrada. No vendemos tus datos. Vos sos dueño de toda tu información y podés eliminarla cuando quieras.</p></div>
     <div class="lh2">1. ¿Qué datos recopilamos?</div>
     <ul class="lul"><li>Registro: nombre, email, teléfono, fecha de nacimiento</li><li>Perfil del adulto mayor: gustos, rutinas, condiciones de salud que decidís compartir</li><li>Interacciones: texto y voz durante el uso</li><li>Pago: procesado por plataformas PCI-DSS (no guardamos datos de tarjetas)</li><li>Automáticos: tipo de dispositivo, IP, frecuencia de uso (ubicación solo con permiso explícito)</li></ul>
     <div class="lh2">2. ¿Para qué usamos tus datos?</div>
     <ul class="lul"><li>Prestar y personalizar el servicio</li><li>Enviar recordatorios y reportes a la familia</li><li>Detectar alertas y emergencias</li><li>Cumplir obligaciones legales</li><li>Comunicaciones comerciales: solo con consentimiento previo y expreso</li></ul>
     <div class="lh2">3. ¿Compartimos tus datos?</div>
-    <div class="lbx w"><div class="lbt">âš ï¸ Compromiso de no venta</div><p class="lp">SELMI no vende, alquila ni comercializa datos. Solo compartimos con proveedores de infraestructura bajo confidencialidad, y ante requerimientos judiciales o regulatorios.</p></div>
+    <div class="lbx w"><div class="lbt">⚠️ Compromiso de no venta</div><p class="lp">SELMI no vende, alquila ni comercializa datos. Solo compartimos con proveedores de infraestructura bajo confidencialidad, y ante requerimientos judiciales o regulatorios.</p></div>
     <div class="lh2">4. ¿Cuánto tiempo guardamos los datos?</div>
     <table class="ltb"><tr><th>Tipo de dato</th><th>Retención</th></tr><tr><td>Grabaciones de audio</td><td>Máx. 90 días (configurable)</td></tr><tr><td>Historial de conversaciones</td><td>Hasta que lo eliminés o canceles</td></tr><tr><td>Datos de registro</td><td>Cuenta activa + 30 días</td></tr><tr><td>Facturación</td><td>10 años (obligación fiscal)</td></tr></table>
     <div class="lh2">5. Tus derechos (ARCO)</div>
