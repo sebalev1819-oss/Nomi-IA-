@@ -223,7 +223,7 @@ section{padding:96px 24px}
 .btog{display:flex;background:var(--cream);border:1.5px solid var(--border);border-radius:100px;padding:4px;width:fit-content;margin:0 auto 52px}
 .ptab{background:none;border:none;font-family:inherit;font-size:13px;font-weight:500;color:var(--text2);padding:8px 22px;border-radius:100px;cursor:pointer;transition:all .2s}
 .ptab.on{background:var(--terra);color:#fff;font-weight:600}
-.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1240px;margin:0 auto}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
 .plan{background:var(--card);border:1.5px solid var(--border);border-radius:22px;padding:36px 28px;display:flex;flex-direction:column;transition:all .3s;position:relative}
 .plan:hover{transform:translateY(-5px);box-shadow:var(--sh2)}
 .plan.pop{border-color:var(--terra);background:linear-gradient(160deg,#fff8f3,var(--cream))}
@@ -636,7 +636,7 @@ select.finp{appearance:none;cursor:pointer}
           </div>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <button onclick="openM('login')" style="background:#2563A8;color:#fff;border:none;font-family:Outfit,sans-serif;font-size:14px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;transition:all .2s">Pedir mi SELMI &#8594;</button>
+          <a href="/preorden" style="background:#2563A8;color:#fff;text-decoration:none;font-family:Outfit,sans-serif;font-size:14px;font-weight:600;padding:13px 28px;border-radius:100px;display:inline-flex;align-items:center;transition:all .2s">Pedir mi SELMI &#8594;</a>
           <button onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})" style="background:rgba(15,30,46,.07);color:#0F1E2E;border:1px solid rgba(15,30,46,.15);font-family:Outfit,sans-serif;font-size:14px;padding:13px 28px;border-radius:100px;cursor:pointer;transition:all .2s">Ver planes</button>
         </div>
       </div>
@@ -962,68 +962,60 @@ select.finp{appearance:none;cursor:pointer}
       </div>
     </div>
     <div class="pg">
-      <!-- PLAN 1: ENTRY -->
+      <!-- ESENCIAL -->
       <div class="plan">
-        <div class="ptier">SELMI Entry</div>
-        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Para empezar</div>
+        <div class="ptier">SELMI Esencial</div>
+        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Para empezar a acompañar y estar tranquilos.</div>
         <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
-          <span class="pamt">USD 49</span>
+          <span class="pamt">ARS 85.000</span>
         </div>
-        <div class="pper">/mes</div>
+        <div class="pper">/mes · precio de lista</div>
         <div style="height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));border-radius:2px;margin:16px 0"></div>
         <ul class="plist" style="margin-bottom:28px">
-          <li>💬 300 min/mes de conversación</li>
-          <li>➕ Minutos adicionales disponibles</li>
-          <li>🎁 Kit completo incluido</li>
+          <li>✅ Equipo SELMI configurado</li>
+          <li>📱 Panel / app familiar</li>
+          <li>⏰ Recordatorios básicos</li>
+          <li>📊 Reporte semanal</li>
+          <li>🔔 Alertas básicas</li>
+          <li>🛟 Soporte inicial</li>
         </ul>
         <a class="bpl bpl-g" href="/preorden?plan=essential" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">Preordenar 30% OFF →</a>
       </div>
-      <!-- PLAN 2: BÁSICO -->
-      <div class="plan">
-        <div class="ptier">SELMI Básico</div>
-        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">El equilibrio justo</div>
-        <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
-          <span class="pamt">USD 76</span>
-        </div>
-        <div class="pper">/mes</div>
-        <div style="height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));border-radius:2px;margin:16px 0"></div>
-        <ul class="plist" style="margin-bottom:28px">
-          <li>💬 800 min/mes de conversación</li>
-          <li>➕ Minutos adicionales disponibles</li>
-          <li>🎁 Kit completo incluido</li>
-        </ul>
-        <a class="bpl bpl-g" href="/preorden?plan=complete" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">Preordenar 30% OFF →</a>
-      </div>
-      <!-- PLAN 3: PLUS (popular) -->
+      <!-- COMPLETO (recomendado) -->
       <div class="plan pop">
         <div class="ptag">⭐ El más elegido</div>
-        <div class="ptier">SELMI Plus</div>
-        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Mayor compañía</div>
+        <div class="ptier">SELMI Completo</div>
+        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Recomendado para adultos mayores que viven solos.</div>
         <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
-          <span class="pamt" style="color:var(--terra)">USD 114</span>
+          <span class="pamt" style="color:var(--terra)">ARS 110.000</span>
         </div>
-        <div class="pper">/mes</div>
+        <div class="pper">/mes · precio de lista</div>
         <div style="height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));border-radius:2px;margin:16px 0"></div>
         <ul class="plist" style="margin-bottom:28px">
-          <li>💬 Conversación ilimitada</li>
-          <li>🩺 Rutinas de bienestar completas</li>
-          <li>🎁 Kit completo incluido</li>
+          <li>✅ Todo lo del Esencial</li>
+          <li>📊 Reportes diarios</li>
+          <li>🎯 Mayor personalización</li>
+          <li>🧠 Mente activa (juegos cognitivos)</li>
+          <li>📹 Videollamada familiar</li>
         </ul>
         <a class="bpl bpl-m" href="/preorden?plan=complete" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">Preordenar 30% OFF →</a>
       </div>
-      <!-- PLAN 4: FAMILIA -->
+      <!-- PREMIUM -->
       <div class="plan">
-        <div class="ptier">SELMI Familia</div>
-        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Para toda la familia</div>
+        <div class="ptier">SELMI Premium</div>
+        <div style="font-size:13px;color:var(--text3);margin-bottom:18px;font-style:italic">Cuidado avanzado y seguimiento prioritario.</div>
         <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
-          <span class="pamt">USD 152</span>
+          <span class="pamt">ARS 142.000</span>
         </div>
-        <div class="pper">/mes</div>
+        <div class="pper">/mes · precio de lista</div>
         <div style="height:2px;background:linear-gradient(90deg,var(--terra),var(--amber));border-radius:2px;margin:16px 0"></div>
         <ul class="plist" style="margin-bottom:28px">
-          <li>💬 Conversación ilimitada</li>
-          <li>📱 2 dispositivos incluidos</li>
-          <li>🎁 Kit completo incluido</li>
+          <li>✅ Todo lo del Completo</li>
+          <li>🔎 Mayor seguimiento</li>
+          <li>🔔 Alertas avanzadas</li>
+          <li>⚡ Configuración prioritaria</li>
+          <li>🛟 Soporte prioritario</li>
+          <li>🩺 Preparado para futuras integraciones de salud</li>
         </ul>
         <a class="bpl bpl-g" href="/preorden?plan=premium" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">Preordenar 30% OFF →</a>
       </div>
