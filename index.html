@@ -87,17 +87,17 @@ nav a:hover{color:var(--terra)}
 
 /* HERO */
 .hero{
-  min-height:92vh;position:relative;overflow:hidden;
-  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
-  padding:120px 56px 70px;text-align:left;
+  min-height:600px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;
+  padding:128px 56px 60px;text-align:left;
   background-image:
     linear-gradient(100deg,rgba(248,249,252,.97) 0%,rgba(248,249,252,.92) 34%,rgba(248,249,252,.55) 56%,rgba(248,249,252,.10) 100%),
     url('img/selmi-hero.webp');
-  background-size:cover;background-position:right center;
+  background-size:cover;background-position:right 22%;
 }
 .hero-ov{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 40%,rgba(122,219,208,.10),transparent 55%)}
 .hc{position:relative;z-index:1;max-width:620px}
-@media(max-width:860px){.hero{padding:100px 22px 50px;align-items:center;text-align:center;background-image:linear-gradient(180deg,rgba(248,249,252,.95) 0%,rgba(248,249,252,.72) 60%,rgba(248,249,252,.55) 100%),url('img/selmi-hero.webp');background-position:center 30%}.hc{max-width:600px}}
+@media(max-width:860px){.hero{min-height:auto;max-height:none;padding:96px 22px 48px;align-items:center;text-align:center;background-image:linear-gradient(180deg,rgba(248,249,252,.95) 0%,rgba(248,249,252,.72) 60%,rgba(248,249,252,.55) 100%),url('img/selmi-hero.webp');background-position:center 30%}.hc{max-width:600px}}
 .hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,121,.12);border:1px solid rgba(14,165,121,.3);color:var(--sage2);font-size:12px;font-weight:600;letter-spacing:.5px;padding:6px 18px;border-radius:100px;margin-bottom:36px;animation:up .8s ease both}
 .bdot{width:6px;height:6px;border-radius:50%;background:var(--sage);animation:beat 2s ease-in-out infinite}
 .hero h1{font-family:'Inter','Nunito',sans-serif;font-size:clamp(44px,6vw,80px);font-weight:800;line-height:1.02;letter-spacing:-2.2px;color:#0F1E2E;animation:up .8s .1s ease both}
@@ -457,7 +457,7 @@ select.finp{appearance:none;cursor:pointer}
 .dia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
 .dia-card{background:#fff;border:1.5px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
 .dia-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(15,30,46,.10);border-color:#A8C0E8}
-.dia-photo{aspect-ratio:4/5;background-size:cover;background-position:center;position:relative}
+.dia-photo{aspect-ratio:16/11;background-size:cover;background-position:center center;position:relative}
 .dia-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,30,46,.08))}
 .dia-body{padding:24px 24px 26px}
 .dia-meta{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:#7ADBD0;text-transform:uppercase;margin-bottom:10px}
@@ -620,7 +620,7 @@ select.finp{appearance:none;cursor:pointer}
         <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:40px">
           <div style="display:flex;align-items:center;gap:16px">
             <div style="width:48px;height:48px;border-radius:14px;background:rgba(37,99,168,.12);border:1px solid rgba(37,99,168,.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">&#128247;</div>
-            <div><div style="font-size:14px;font-weight:600;color:#0F1E2E;margin-bottom:3px">C&#225;mara con domo acr&#237;lico</div><div style="font-size:13px;color:rgba(15,30,46,.6);line-height:1.55">Detecta ca&#237;das, movimiento inusual y hace videollamadas con la familia.</div></div>
+            <div><div style="font-size:14px;font-weight:600;color:#0F1E2E;margin-bottom:3px">C&#225;mara con domo acr&#237;lico</div><div style="font-size:13px;color:rgba(15,30,46,.6);line-height:1.55">Videollamadas nítidas con la familia y visión del hogar para que la persona mayor pueda mostrar y compartir.</div></div>
           </div>
           <div style="display:flex;align-items:center;gap:16px">
             <div style="width:48px;height:48px;border-radius:14px;background:rgba(14,165,121,.12);border:1px solid rgba(14,165,121,.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">&#128187;</div>
