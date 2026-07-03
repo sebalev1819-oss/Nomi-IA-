@@ -87,17 +87,18 @@ nav a:hover{color:var(--terra)}
 
 /* HERO */
 .hero{
-  min-height:600px;position:relative;overflow:hidden;
-  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;
-  padding:128px 56px 60px;text-align:left;
-  background-image:
-    linear-gradient(100deg,rgba(248,249,252,.97) 0%,rgba(248,249,252,.92) 34%,rgba(248,249,252,.55) 56%,rgba(248,249,252,.10) 100%),
-    url('img/selmi-hero.webp');
-  background-size:cover;background-position:right 22%;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;gap:56px;
+  padding:136px 56px 72px;text-align:left;
+  background:linear-gradient(160deg,#F8F9FC 0%,#EFF5F2 55%,#EAF3EE 100%);
 }
 .hero-ov{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 40%,rgba(122,219,208,.10),transparent 55%)}
-.hc{position:relative;z-index:1;max-width:620px}
-@media(max-width:860px){.hero{min-height:auto;max-height:none;padding:96px 22px 48px;align-items:center;text-align:center;background-image:linear-gradient(180deg,rgba(248,249,252,.95) 0%,rgba(248,249,252,.72) 60%,rgba(248,249,252,.55) 100%),url('img/selmi-hero.webp');background-position:center 30%}.hc{max-width:600px}}
+.hc{position:relative;z-index:1;max-width:600px;flex:1 1 auto}
+.hero-ph{position:relative;z-index:1;flex:0 0 400px;max-width:400px}
+.hero-ph img{display:block;width:100%;height:auto;border-radius:24px;box-shadow:0 28px 70px rgba(15,30,46,.22)}
+.hero-ph-tag{position:absolute;left:-14px;bottom:26px;background:rgba(255,255,255,.94);border:1px solid rgba(15,30,46,.08);border-radius:100px;padding:9px 18px;font-size:13px;font-weight:600;color:var(--text);box-shadow:0 10px 26px rgba(15,30,46,.14);display:flex;align-items:center;gap:8px}
+@media(max-width:1080px){.hero{gap:36px}.hero-ph{flex-basis:330px;max-width:330px}}
+@media(max-width:860px){.hero{flex-direction:column;padding:96px 22px 48px;align-items:center;text-align:center;gap:36px}.hc{max-width:600px}.hero-ph{flex:0 0 auto;width:100%;max-width:330px}.hero-ph-tag{left:50%;transform:translateX(-50%);bottom:-16px}}
 .hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,121,.12);border:1px solid rgba(14,165,121,.3);color:var(--sage2);font-size:12px;font-weight:600;letter-spacing:.5px;padding:6px 18px;border-radius:100px;margin-bottom:36px;animation:up .8s ease both}
 .bdot{width:6px;height:6px;border-radius:50%;background:var(--sage);animation:beat 2s ease-in-out infinite}
 .hero h1{font-family:'Inter','Nunito',sans-serif;font-size:clamp(44px,6vw,80px);font-weight:800;line-height:1.02;letter-spacing:-2.2px;color:#0F1E2E;animation:up .8s .1s ease both}
@@ -139,7 +140,7 @@ nav a:hover{color:var(--terra)}
   radial-gradient(ellipse 700px 400px at 25% 50%,rgba(122,219,208,.16),transparent 65%),
   radial-gradient(ellipse 600px 400px at 80% 60%,rgba(197,168,232,.14),transparent 60%),
   linear-gradient(135deg,#0F1E2E 0%,#1F2937 100%)}
-.strip-2{background-image:linear-gradient(170deg,rgba(15,30,46,.35) 0%,rgba(15,30,46,.55) 100%),url('img/selmi-dia-videollamada.webp');background-position:center 35%}
+.strip-2{background-image:linear-gradient(170deg,rgba(15,30,46,.35) 0%,rgba(15,30,46,.55) 100%),url('img/selmi-videollamada-familia.webp');background-position:center 30%}
 
 /* SECTIONS */
 section{padding:96px 24px}
@@ -379,7 +380,7 @@ select.finp{appearance:none;cursor:pointer}
   .hbg{display:flex}
 
   /* Hero */
-  .hero{padding:100px 18px 60px;background-attachment:scroll}
+  .hero{padding:100px 18px 60px}
   .hero h1{font-size:clamp(32px,9vw,52px);letter-spacing:-1px}
   .hsub{font-size:16px;margin:18px auto 32px}
   .hbadge{font-size:11px;padding:5px 14px}
@@ -575,6 +576,10 @@ select.finp{appearance:none;cursor:pointer}
     </div>
     <div style="margin-top:16px;font-size:13px;color:var(--text3)">Sin pago hoy · Reservás tu lugar · Te contactamos por WhatsApp</div>
   </div>
+  <div class="hero-ph">
+    <img src="img/selmi-hero-senor.webp" width="960" height="1200" fetchpriority="high" alt="Un señor mayor sonríe mientras desayuna y conversa con su dispositivo SELMI en la cocina">
+    <div class="hero-ph-tag"><span>💬</span><span>«Buenos días, ¿en qué puedo ayudarte hoy?»</span></div>
+  </div>
 </section>
 
 <!-- TICKER -->
@@ -642,7 +647,7 @@ select.finp{appearance:none;cursor:pointer}
       </div>
       <div style="position:relative">
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(212,148,92,.2),transparent 70%);pointer-events:none"></div>
-        <img src="img/selmi-dispositivo.webp" loading="lazy" width="1600" height="900" alt="Dispositivo SELMI en el hogar mostrando el saludo del día" style="width:100%;aspect-ratio:16/11;object-fit:cover;object-position:center;display:block;border-radius:20px;position:relative;z-index:1;box-shadow:0 24px 60px rgba(0,0,0,.35)">
+        <img src="img/selmi-dispositivo.webp" loading="lazy" width="1600" height="900" alt="Dispositivo SELMI en el hogar mostrando el saludo del día" style="width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:20px;position:relative;z-index:1;box-shadow:0 24px 60px rgba(0,0,0,.35)">
         <div style="position:absolute;top:24px;left:-16px;background:rgba(20,10,4,.88);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:8px 16px;display:flex;align-items:center;gap:8px;z-index:2">
           <span style="font-size:14px">&#128225;</span>
           <span style="font-size:12px;font-weight:600;color:#FBF5EB">WiFi + Bluetooth</span>
@@ -702,6 +707,10 @@ select.finp{appearance:none;cursor:pointer}
       <div style="text-align:center">
         <div style="border:11px solid #1A2530;border-radius:40px;overflow:hidden;box-shadow:0 32px 70px rgba(31,41,55,.24);width:270px;margin:0 auto"><img src="img/selmi-app-home.webp" loading="lazy" alt="App SELMI: estado del día y resumen semanal" style="display:block;width:100%"></div>
         <div style="font-size:13px;font-weight:700;color:var(--terra);margin-top:14px">El estado del día, de un vistazo</div>
+      </div>
+      <div style="text-align:center">
+        <div style="border:9px solid #1A2530;border-radius:34px;overflow:hidden;box-shadow:0 24px 60px rgba(31,41,55,.18);width:230px;margin:0 auto"><img src="img/selmi-app-bienestar.webp" loading="lazy" alt="App SELMI: bienestar cognitivo de Carmen, semana a semana" style="display:block;width:100%"></div>
+        <div style="font-size:13px;font-weight:600;color:var(--text2);margin-top:14px">Bienestar cognitivo, semana a semana</div>
       </div>
       <div style="text-align:center">
         <div style="border:9px solid #1A2530;border-radius:34px;overflow:hidden;box-shadow:0 24px 60px rgba(31,41,55,.18);width:230px;margin:0 auto"><img src="img/selmi-app-tarea.webp" loading="lazy" alt="App SELMI: configurar recordatorios" style="display:block;width:100%"></div>
@@ -793,7 +802,7 @@ select.finp{appearance:none;cursor:pointer}
 <!-- STRIP 2 -->
 <div class="strip strip-2">
   <div class="si">
-    <h2>La tranquilidad de saber<br>que no está <em>sola</em></h2>
+    <h2>La tranquilidad de saber<br>que no están <em>solos</em></h2>
     <p>SELMI cuida a tu ser querido cuando vos no podés estar. Reportes diarios, alertas instantáneas, compañía real.</p>
   </div>
 </div>
