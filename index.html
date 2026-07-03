@@ -1118,25 +1118,20 @@ select.finp{appearance:none;cursor:pointer}
       <div class="fg2"><label class="flbl">Zona / Ciudad de envío *</label><input class="finp" id="lead-zona" type="text" placeholder="Ej: Palermo, CABA · Córdoba Capital · Monterrey, MX"></div>
       <div class="flbl" style="margin-bottom:10px;margin-top:16px">Elegí tu plan *</div>
       <div class="lead-plan-grid">
-        <div class="lead-plan-card" id="lp-entry" onclick="selectLeadPlan('SELMI Entry')">
-          <div class="lpc-name">SELMI Entry</div>
-          <div class="lpc-price">USD 49/mes</div>
-          <div class="lpc-sub">300 min/mes</div>
+        <div class="lead-plan-card" id="lp-esencial" onclick="selectLeadPlan('SELMI Esencial')">
+          <div class="lpc-name">SELMI Esencial</div>
+          <div class="lpc-price">ARS 85.000/mes</div>
+          <div class="lpc-sub">Preventa 30% OFF</div>
         </div>
-        <div class="lead-plan-card" id="lp-basico" onclick="selectLeadPlan('SELMI Básico')">
-          <div class="lpc-name">SELMI Básico</div>
-          <div class="lpc-price">USD 76/mes</div>
-          <div class="lpc-sub">800 min/mes</div>
+        <div class="lead-plan-card sel" id="lp-completo" onclick="selectLeadPlan('SELMI Completo')">
+          <div class="lpc-name">⭐ SELMI Completo</div>
+          <div class="lpc-price">ARS 110.000/mes</div>
+          <div class="lpc-sub">Preventa 30% OFF</div>
         </div>
-        <div class="lead-plan-card sel" id="lp-plus" onclick="selectLeadPlan('SELMI Plus')">
-          <div class="lpc-name">⭐ SELMI Plus</div>
-          <div class="lpc-price">USD 114/mes</div>
-          <div class="lpc-sub">Ilimitado</div>
-        </div>
-        <div class="lead-plan-card" id="lp-familia" onclick="selectLeadPlan('SELMI Familia')">
-          <div class="lpc-name">SELMI Familia</div>
-          <div class="lpc-price">USD 152/mes</div>
-          <div class="lpc-sub">Ilimitado · 2 dispositivos</div>
+        <div class="lead-plan-card" id="lp-premium" onclick="selectLeadPlan('SELMI Premium')">
+          <div class="lpc-name">SELMI Premium</div>
+          <div class="lpc-price">ARS 142.000/mes</div>
+          <div class="lpc-sub">Preventa 30% OFF</div>
         </div>
       </div>
       <button class="fbn fbt" onclick="submitLead()">Quiero que me contacten →</button>
@@ -1187,7 +1182,7 @@ select.finp{appearance:none;cursor:pointer}
   <div class="modal mw">
     <button class="mcl" onclick="closeM('payment')">×</button>
     <h3 class="mtit">Completar suscripción</h3><p class="msub">Tu pago está protegido con cifrado SSL 256-bit.</p>
-    <div class="payb"><div><div class="pyn" id="py-n">Plan Familia</div><div class="pyno">Facturación mensual · Cancelá cuando quieras</div></div><div class="pyp" id="py-p">USD 152/mes</div></div>
+    <div class="payb"><div><div class="pyn" id="py-n">Plan Completo</div><div class="pyno">Facturación mensual · Cancelá cuando quieras</div></div><div class="pyp" id="py-p">ARS 110.000/mes</div></div>
     <div class="fr"><div class="fg2"><label class="flbl">Nombre completo</label><input class="finp" type="text" placeholder="Carlos García"></div><div class="fg2"><label class="flbl">Email</label><input class="finp" type="email" placeholder="tu@email.com"></div></div>
     <div class="cf"><div class="cfl">Número de tarjeta</div><input class="cfi" type="text" placeholder="1234 5678 9012 3456" maxlength="19" oninput="fmtC(this)"></div>
     <div class="fr"><div class="cf"><div class="cfl">Vencimiento</div><input class="cfi" type="text" placeholder="MM / AA" maxlength="7"></div><div class="cf"><div class="cfl">CVV</div><input class="cfi" type="text" placeholder="•••" maxlength="4"></div></div>
@@ -1307,9 +1302,9 @@ function showL(){document.getElementById('vr').style.display='none';document.get
 function startW(){closeM('login');openM('profile')}
 function goPrf(){closeM('payment');openM('profile')}
 function openPayment(plan,price){document.getElementById('py-n').textContent='Plan '+plan;document.getElementById('py-p').textContent='$'+price+'/mes';openM('payment')}
-var _leadPlan='SELMI Plus';
+var _leadPlan='SELMI Completo';
 function openLead(plan){
-  _leadPlan=plan||'SELMI Plus';
+  _leadPlan=plan||'SELMI Completo';
   selectLeadPlan(_leadPlan);
   document.getElementById('lead-form').style.display='block';
   document.getElementById('lead-ok').style.display='none';
@@ -1317,8 +1312,8 @@ function openLead(plan){
 }
 function selectLeadPlan(plan){
   _leadPlan=plan;
-  ['lp-entry','lp-basico','lp-plus','lp-familia'].forEach(function(id){document.getElementById(id).classList.remove('sel')});
-  var map={'SELMI Entry':'lp-entry','SELMI Básico':'lp-basico','SELMI Plus':'lp-plus','SELMI Familia':'lp-familia'};
+  ['lp-esencial','lp-completo','lp-premium'].forEach(function(id){document.getElementById(id).classList.remove('sel')});
+  var map={'SELMI Esencial':'lp-esencial','SELMI Completo':'lp-completo','SELMI Premium':'lp-premium'};
   if(map[plan]) document.getElementById(map[plan]).classList.add('sel');
 }
 function submitLead(){
