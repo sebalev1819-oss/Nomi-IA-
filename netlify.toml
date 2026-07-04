@@ -17,3 +17,11 @@
 
 # /preorden se sirve solo desde preorden/index.html (Netlify resuelve la
 # carpeta con index automáticamente). No hace falta redirect para eso.
+
+# ── CORS para assets compartidos (fb-assets) ─────────────────────────
+# Permite que estas imagenes se lean via fetch desde otros origenes
+# (usado para cargar el logo/portada en plataformas externas).
+[[headers]]
+  for = "/fb-assets/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
