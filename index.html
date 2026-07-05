@@ -59,7 +59,7 @@
       "@type": "Product",
       "@id": "https://selmi.ai/#product",
       "name": "SELMI",
-      "description": "Dispositivo de acompañamiento para personas mayores en casa: recordatorios de medicación con voz, videollamadas simples y avisos a la familia si algo cambia. Incluye app familiar. Se entrega en comodato con suscripción mensual.",
+      "description": "Dispositivo de acompañamiento para personas mayores en casa: recordatorios de medicación con voz, videollamadas simples, juegos de estimulación cognitiva con puntuación semanal en la app y avisos a la familia si algo cambia. Incluye app familiar. Se entrega en comodato con suscripción mensual.",
       "image": [
         "https://selmi.ai/img/selmi-hero.webp",
         "https://selmi.ai/img/selmi-dispositivo.webp"
@@ -79,11 +79,13 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "¿La preorden me obliga a pagar?", "acceptedAnswer": { "@type": "Answer", "text": "No. La preorden es una reserva sin cargo. No te cobramos nada hasta que un asesor confirme disponibilidad, plan, forma de pago y fecha de entrega." } },
-        { "@type": "Question", "name": "¿Tengo que comprar el dispositivo?", "acceptedAnswer": { "@type": "Answer", "text": "No. El dispositivo SELMI se entrega en comodato mientras tu suscripción esté activa: está incluido en el plan y no se cobra aparte. Solo pagás la mensualidad." } },
-        { "@type": "Question", "name": "¿Funciona en Argentina?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Estamos lanzando las primeras unidades en Argentina. Necesita conexión a internet en el hogar (WiFi)." } },
-        { "@type": "Question", "name": "¿Qué necesita la persona mayor?", "acceptedAnswer": { "@type": "Answer", "text": "Nada especial. SELMI está pensado para que solo tenga que hablar o tocar botones grandes. No hace falta que sepa usar tecnología ni que toque un celular." } },
-        { "@type": "Question", "name": "¿SELMI reemplaza al médico o al cuidador?", "acceptedAnswer": { "@type": "Answer", "text": "No. SELMI acompaña y ayuda a la familia a estar más cerca, pero no reemplaza servicios médicos, cuidadores profesionales ni sistemas de emergencia." } }
+        { "@type": "Question", "name": "¿La persona mayor necesita saber usar tecnología?", "acceptedAnswer": { "@type": "Answer", "text": "No. SELMI funciona por voz o texto desde cualquier teléfono, tablet o computadora. La familia configura todo y la persona mayor solo tiene que hablar. No hay que descargar nada." } },
+        { "@type": "Question", "name": "¿Cómo me avisa si algo va mal?", "acceptedAnswer": { "@type": "Answer", "text": "SELMI envía alertas automáticas por WhatsApp y email si detecta señales preocupantes: tristeza inusual, no responder a recordatorios de medicación, o cualquier situación que requiera atención." } },
+        { "@type": "Question", "name": "¿SELMI reemplaza al médico o al cuidador?", "acceptedAnswer": { "@type": "Answer", "text": "No. SELMI es un complemento. Acompaña entre visitas, recuerda indicaciones médicas y alerta a la familia cuando algo cambia. Siempre recomendará consultar con profesionales para situaciones de salud." } },
+        { "@type": "Question", "name": "¿Qué son los juegos cognitivos y la puntuación cognitiva?", "acceptedAnswer": { "@type": "Answer", "text": "SELMI propone cada día juegos breves de memoria, atención, lenguaje y velocidad, pensados para adultos mayores. Con esa actividad, la app muestra a la familia una puntuación cognitiva semanal y su evolución. Es información de estimulación y bienestar: no es una evaluación médica ni un diagnóstico." } },
+        { "@type": "Question", "name": "¿Las conversaciones son privadas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las conversaciones están cifradas con AES-256. La familia solo recibe reportes de estado general y alertas, no transcripciones completas. La persona mayor puede conversar con total privacidad." } },
+        { "@type": "Question", "name": "¿Puedo cancelar cuando quiera?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, sin complicaciones ni penalidades. Cancelás desde tu cuenta en cualquier momento. Recibís reintegro proporcional por días no consumidos, conforme la Ley 24.240 de Defensa del Consumidor." } },
+        { "@type": "Question", "name": "¿En qué países está disponible?", "acceptedAnswer": { "@type": "Answer", "text": "Argentina, México, Chile, Colombia, Uruguay, Perú y en expansión a toda LATAM. Funciona en español y portugués. Pagos en USD, ARS y otras monedas locales." } }
       ]
     }
   ]
@@ -545,6 +547,19 @@ select.finp{appearance:none;cursor:pointer}
   .ct-title{font-size:14px}
   .ct-desc{font-size:13px}
 }
+/* MENTE ACTIVA */
+.ma-media{display:flex;justify-content:center;align-items:center;gap:36px;margin-top:52px;flex-wrap:wrap}
+.ma-photo{width:100%;height:auto;border-radius:22px;box-shadow:0 24px 60px rgba(31,41,55,.16);display:block}
+.ma-phone{width:206px;border:9px solid #1A2530;border-radius:34px;overflow:hidden;box-shadow:0 24px 60px rgba(31,41,55,.18);background:#fff;margin:0 auto}
+.ma-phone img{display:block;width:100%;height:auto}
+.ma-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:40px}
+.ma-chip{font-size:13.5px;font-weight:700;padding:8px 18px;border-radius:100px}
+.ma-points{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;text-align:left}
+.ma-point{background:#fff;border:1.5px solid var(--border);border-radius:22px;padding:26px 24px}
+.ma-point .mp-i{font-size:26px;margin-bottom:12px}
+.ma-point .mp-t{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px}
+.ma-point .mp-d{font-size:13.5px;color:var(--text2);line-height:1.6}
+@media (max-width:920px){.ma-points{grid-template-columns:1fr}.ma-phone{width:180px}}
 </style>
 </head>
 <body>
@@ -832,9 +847,40 @@ select.finp{appearance:none;cursor:pointer}
       <div class="fc"><div class="fi">💊</div><div class="ft">Recordatorios de medicación</div><div class="fd">Recuerda medicamentos, horas de toma y controles. Si no responde, alerta automáticamente a la familia.</div></div>
       <div class="fc"><div class="fi">📊</div><div class="ft">Reportes para la familia</div><div class="fd">Cada día la familia recibe un resumen del estado anímico y bienestar. Saben cómo estuvo el día aunque estén lejos.</div></div>
       <div class="fc"><div class="fi">🔔</div><div class="ft">Avisos a la familia</div><div class="fd">Si algo parece fuera de lo habitual —participa menos, no confirma la medicación, o pide ayuda— SELMI le avisa a los contactos que la familia configuró.</div></div>
-      <div class="fc"><div class="fi">🧠</div><div class="ft">Mente activa</div><div class="fd">Juegos breves de memoria, atención y orientación. La familia no recibe diagnósticos: recibe señales simples si algo cambia respecto a lo habitual.</div></div>
+      <div class="fc"><div class="fi">🧠</div><div class="ft">Mente activa</div><div class="fd">Juegos breves de memoria, atención, lenguaje y velocidad. La familia no recibe diagnósticos: recibe señales simples si algo cambia respecto a lo habitual.</div></div>
       <div class="fc"><div class="fi">📞</div><div class="ft">Sin apps complicadas</div><div class="fd">Funciona por voz o texto desde cualquier teléfono, tablet o computadora. No requiere descargas ni conocimientos tecnológicos.</div></div>
     </div>
+  </div>
+</section>
+
+<!-- MENTE ACTIVA -->
+<section id="mente-activa" style="background:linear-gradient(160deg,#F4F7FA 0%,#EAF0F6 100%);border-top:1px solid rgba(15,30,46,.06)">
+  <div class="container" style="text-align:center">
+    <span class="stag">Mente activa</span>
+    <h2 class="stitle">Juegos que estimulan.<br>Un puntaje que <em>te orienta</em>.</h2>
+    <p class="ssub" style="margin:16px auto 0;max-width:620px">Cada día, SELMI propone juegos breves en su pantalla: memoria, trivias, palabras. Para la persona mayor es un momento entretenido. Para vos, es información: la app convierte esa actividad en una puntuación cognitiva semanal.</p>
+    <div class="ma-media">
+      <div style="flex:0 1 700px;min-width:280px">
+        <img class="ma-photo" src="img/selmi-mente-activa.webp" loading="lazy" width="1600" height="900" alt="Una señora mayor juega un juego de memoria en la pantalla táctil del dispositivo SELMI, en la cocina de su casa">
+        <div style="font-size:13px;font-weight:600;color:var(--text2);margin-top:14px">En el dispositivo: juegos breves, todos los días</div>
+      </div>
+      <div>
+        <div class="ma-phone"><img src="img/selmi-app-bienestar.webp" loading="lazy" width="590" height="1280" alt="App SELMI: puntuación cognitiva semanal de Carmen con el detalle de memoria, atención, lenguaje y velocidad"></div>
+        <div style="font-size:13px;font-weight:700;color:var(--terra);margin-top:14px">En tu app: la puntuación semanal</div>
+      </div>
+    </div>
+    <div class="ma-chips">
+      <span class="ma-chip" style="background:#E8F6F0;color:#2A9D8F">🧩 Memoria</span>
+      <span class="ma-chip" style="background:#F1ECFB;color:#7C5CBF">🎯 Atención</span>
+      <span class="ma-chip" style="background:#FDECEC;color:#C0392B">💬 Lenguaje</span>
+      <span class="ma-chip" style="background:#FBF3DE;color:#B7791F">⚡ Velocidad</span>
+    </div>
+    <div class="ma-points">
+      <div class="ma-point"><div class="mp-i">🧠</div><div class="mp-t">Juegos breves, todos los días</div><div class="mp-d">SELMI los propone como parte de la rutina, adaptados a cada persona. Se juega tocando la pantalla o hablando, sin instrucciones complicadas.</div></div>
+      <div class="ma-point"><div class="mp-i">📈</div><div class="mp-t">Puntuación cognitiva en la app</div><div class="mp-d">Un puntaje semanal simple, con el detalle por área y su evolución en el tiempo. Sabés cómo viene, sin gráficos médicos complicados.</div></div>
+      <div class="ma-point"><div class="mp-i">🔔</div><div class="mp-t">Señales, no diagnósticos</div><div class="mp-d">Si algo cambia de forma sostenida respecto a lo habitual, la familia recibe un aviso simple para conversarlo con su médico.</div></div>
+    </div>
+    <p style="font-size:13px;color:var(--text3);margin-top:36px">Los juegos y la puntuación cognitiva son de estimulación y bienestar. No constituyen una evaluación médica ni un diagnóstico.</p>
   </div>
 </section>
 
@@ -1090,6 +1136,7 @@ select.finp{appearance:none;cursor:pointer}
       <div class="fi2" onclick="tf(this)"><div class="fq"><span>¿La persona mayor necesita saber usar tecnología?</span><div class="fic">+</div></div><div class="fa">No. SELMI funciona por voz o texto desde cualquier teléfono, tablet o computadora. La familia configura todo y la persona mayor solo tiene que hablar. No hay que descargar nada.</div></div>
       <div class="fi2" onclick="tf(this)"><div class="fq"><span>¿Cómo me avisa si algo va mal?</span><div class="fic">+</div></div><div class="fa">SELMI envía alertas automáticas por WhatsApp y email si detecta señales preocupantes: tristeza inusual, no responder a recordatorios de medicación, o cualquier situación que requiera atención.</div></div>
       <div class="fi2" onclick="tf(this)"><div class="fq"><span>¿SELMI reemplaza al médico o al cuidador?</span><div class="fic">+</div></div><div class="fa">No. SELMI es un complemento. Acompaña entre visitas, recuerda indicaciones médicas y alerta a la familia cuando algo cambia. Siempre recomendará consultar con profesionales para situaciones de salud.</div></div>
+      <div class="fi2" onclick="tf(this)"><div class="fq"><span>¿Qué son los juegos cognitivos y la puntuación cognitiva?</span><div class="fic">+</div></div><div class="fa">SELMI propone cada día juegos breves de memoria, atención, lenguaje y velocidad, pensados para adultos mayores. Con esa actividad, la app muestra a la familia una puntuación cognitiva semanal y su evolución. Es información de estimulación y bienestar: no es una evaluación médica ni un diagnóstico.</div></div>
       <div class="fi2" onclick="tf(this)"><div class="fq"><span>¿Las conversaciones son privadas?</span><div class="fic">+</div></div><div class="fa">Sí. Las conversaciones están cifradas con AES-256. La familia solo recibe reportes de estado general y alertas, no transcripciones completas. La persona mayor puede conversar con total privacidad.</div></div>
       <div class="fi2" onclick="tf(this)"><div class="fq"><span>¿Puedo cancelar cuando quiera?</span><div class="fic">+</div></div><div class="fa">Sí, sin complicaciones ni penalidades. Cancelás desde tu cuenta en cualquier momento. Recibís reintegro proporcional por días no consumidos, conforme la Ley 24.240 de Defensa del Consumidor.</div></div>
       <div class="fi2" onclick="tf(this)"><div class="fq"><span>¿En qué países está disponible?</span><div class="fic">+</div></div><div class="fa">Argentina, México, Chile, Colombia, Uruguay, Perú y en expansión a toda LATAM. Funciona en español y portugués. Pagos en USD, ARS y otras monedas locales.</div></div>
