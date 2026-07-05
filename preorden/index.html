@@ -321,12 +321,14 @@ footer{background:var(--text);padding:60px 24px 32px;margin-top:40px}
     <div class="pay-opts">
       <span class="pay-opt">💳 Suscripción mensual</span>
       <span class="pay-opt">🔖 Reserva inicial</span>
-      <span class="pay-opt">📦 Compra del equipo + suscripción</span>
+      <span class="pay-opt">🤝 Dispositivo en comodato incluido</span>
     </div>
     <div class="pricing-note">
       Los precios de preventa tienen 30% de descuento sobre el precio de lanzamiento. La preorden
       <strong>no implica cobro automático</strong>. Un asesor de SELMI se comunicará para confirmar
       disponibilidad, forma de pago y fecha estimada de entrega.
+      El dispositivo SELMI se entrega <strong>en comodato</strong>: no comprás el equipo,
+      solo pagás la mensualidad del plan mientras el servicio esté activo.
     </div>
   </div>
 </section>
@@ -491,6 +493,7 @@ footer{background:var(--text);padding:60px 24px 32px;margin-top:40px}
   <div class="wrap">
     <div class="faq">
       <details><summary>¿La preorden me obliga a pagar?</summary><p>No. La preorden es una reserva sin cargo. No te cobramos nada hasta que un asesor confirme con vos disponibilidad, plan, forma de pago y fecha de entrega.</p></details>
+      <details><summary>¿Tengo que comprar el dispositivo?</summary><p>No. El dispositivo SELMI se entrega <strong>en comodato</strong> mientras tu suscripción esté activa: está incluido en el plan y no se cobra aparte. Solo pagás la mensualidad.</p></details>
       <details><summary>¿Cuándo se entrega el equipo?</summary><p>Estamos en la etapa de lanzamiento inicial en Argentina con cupos limitados. Cuando confirmemos tu preorden te damos una fecha estimada de entrega según tu zona.</p></details>
       <details><summary>¿Funciona en Argentina?</summary><p>Sí. Estamos lanzando las primeras unidades en Argentina. Necesita conexión a internet en el hogar (WiFi).</p></details>
       <details><summary>¿Qué necesita la persona mayor?</summary><p>Nada especial. SELMI está pensado para que solo tenga que hablar. No hace falta que sepa usar tecnología ni que toque pantallas.</p></details>
@@ -622,6 +625,7 @@ function renderPlans(cfg){
       <div class="price-old">Lista: ${money(p.listPriceMonthly)}/mes</div>
       <div class="price-new">${money(p.preorderPriceMonthly)}<small>/mes</small></div>
       <div class="save">${cfg.discountPercent}% OFF preventa</div>
+      <div style="font-size:12px;color:var(--text3,#6B7A8C);margin-top:4px">🤝 Dispositivo en comodato · solo pagás la mensualidad</div>
       <ul class="pfeat">${(p.features||[]).map(f=>`<li>${f}</li>`).join('')}</ul>
       <a href="#preorden" class="btn btn-md btn-primary btn-block" data-plan="${p.key}" data-cta="plan_${p.key}">Preordenar ${p.name.replace('SELMI ','')}</a>
     </div>`).join('');
