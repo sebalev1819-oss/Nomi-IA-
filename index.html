@@ -31,12 +31,50 @@
   "@graph": [
     {
       "@type": "Organization",
+      "@id": "https://selmi.ai/#organization",
       "name": "SELMI",
       "url": "https://selmi.ai/",
-      "logo": "https://selmi.ai/img/selmi-hero.webp",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://selmi.ai/fb-assets/selmi-perfil.jpg"
+      },
       "areaServed": "AR",
       "email": "info@selmi.ai",
-      "description": "Dispositivo de acompañamiento y bienestar para adultos mayores en casa, con app familiar."
+      "description": "Dispositivo de acompañamiento y bienestar para adultos mayores en casa, con app familiar.",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61591732976474",
+        "https://www.instagram.com/selmi.latam/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://selmi.ai/#website",
+      "url": "https://selmi.ai/",
+      "name": "SELMI",
+      "alternateName": ["selmi.ai", "Selmi"],
+      "inLanguage": "es-AR",
+      "publisher": { "@id": "https://selmi.ai/#organization" }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://selmi.ai/#product",
+      "name": "SELMI",
+      "description": "Dispositivo de acompañamiento para personas mayores en casa: recordatorios de medicación con voz, videollamadas simples y avisos a la familia si algo cambia. Incluye app familiar. Se entrega en comodato con suscripción mensual.",
+      "image": [
+        "https://selmi.ai/img/selmi-hero.webp",
+        "https://selmi.ai/img/selmi-dispositivo.webp"
+      ],
+      "brand": { "@type": "Brand", "name": "SELMI" },
+      "url": "https://selmi.ai/",
+      "offers": {
+        "@type": "AggregateOffer",
+        "url": "https://selmi.ai/preorden",
+        "priceCurrency": "ARS",
+        "lowPrice": "59500",
+        "highPrice": "99400",
+        "offerCount": "3",
+        "availability": "https://schema.org/PreOrder"
+      }
     },
     {
       "@type": "FAQPage",
