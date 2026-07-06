@@ -1,0 +1,5 @@
+# Portal de clientes: selmi.ai/cuenta -> app del portal (ERP).
+# 302 a propósito: cuando el CNAME cuenta.selmi.ai esté creado en Cloudflare,
+# este destino se cambia a https://cuenta.selmi.ai sin problemas de caché.
+/cuenta/*  https://selmierp.netlify.app/cuenta/:splat  302
+/cuenta    https://selmierp.netlify.app/cuenta         302
