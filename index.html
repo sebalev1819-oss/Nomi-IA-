@@ -1370,7 +1370,7 @@ src="https://www.facebook.com/tr?id=27654960004124680&ev=PageView&noscript=1"
     <div class="lbx ok"><div class="lbt">✅ Compromiso sobre IA</div><p class="lp">NO utilizamos conversaciones identificables para entrenar IA. Audio retenido máximo 90 días. El usuario puede reducirlo desde Configuración › Privacidad › Audio.</p></div>
     <div class="lh2">10. Derechos ARCO</div>
     <div class="lbx i"><div class="lbt">ℹ️ Sus derechos</div><ul class="lul"><li><b>ACCESO:</b> conocer qué datos se tratan</li><li><b>RECTIFICACIÓN:</b> corregir datos incorrectos</li><li><b>CANCELACIÓN:</b> solicitar supresión de datos</li><li><b>OPOSICIÓN:</b> oponerse al tratamiento</li></ul></div>
-    <p class="lp">Contacto: <a href="mailto:info@selmi.ai">info@selmi.ai</a> — Asunto "Ejercicio Derechos ARCO". Plazos: Acceso 30 días hábiles; Rectificación/Cancelación/Oposición 5 días hábiles. AAIP: 0800-333-1933.</p>
+    <p class="lp">Contacto: <a href="mailto:info@selmi.ai">info@selmi.ai</a> — Asunto "Ejercicio Derechos ARCO". Plazos: Acceso 10 días corridos (art. 14, Ley 25.326); Rectificación/Cancelación/Oposición 5 días hábiles (art. 16). AAIP: 0800-333-1933.</p>
     <div class="lh2">11. Derechos del Consumidor (Ley 24.240)</div>
     <div class="lbx ok"><div class="lbt">✅ Arrepentimiento y reintegros</div><ul class="lul"><li>Podés revocar dentro de los 10 días corridos sin costo.</li><li>Cancelación anticipada: reintegro proporcional a días no consumidos.</li><li>Devolución en 10 días hábiles al mismo medio de pago.</li></ul></div>
     <div class="lh2">14. Equipo en Comodato y Garantía de Equipo</div>
@@ -1415,6 +1415,9 @@ src="https://www.facebook.com/tr?id=27654960004124680&ev=PageView&noscript=1"
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function openM(id){document.getElementById('modal-'+id).classList.add('on');document.body.style.overflow='hidden'}
+// Anclas legales: /#terminos y /#privacidad abren los modales (links desde /preorden y externos)
+function openLegalHash(){var lm={'#terminos':'tyc','#privacidad':'privacy'}[location.hash];if(lm)openM(lm)}
+window.addEventListener('hashchange',openLegalHash);openLegalHash();
 function closeM(id){document.getElementById('modal-'+id).classList.remove('on');document.body.style.overflow=''}
 function closeAll(){['login','lead','payment','profile','tyc','privacy'].forEach(closeM)}
 document.querySelectorAll('.ov').forEach(o=>{o.addEventListener('click',function(e){if(e.target===this){this.classList.remove('on');document.body.style.overflow=''}})})
