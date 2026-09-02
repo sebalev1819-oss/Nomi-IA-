@@ -25,3 +25,31 @@
   for = "/fb-assets/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+# Seguridad básica para todas las páginas públicas.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Los nombres de imágenes cambian cuando se actualiza una pieza importante.
+# El navegador puede conservarlas y Netlify mantiene una copia duradera en CDN.
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+    Netlify-CDN-Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+    Netlify-CDN-Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+    Netlify-CDN-Cache-Control = "public, max-age=31536000, immutable"
