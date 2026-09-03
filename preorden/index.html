@@ -36,7 +36,7 @@
     {
       "@type": "Product",
       "name": "SELMI",
-      "description": "Dispositivo de acompañamiento para personas mayores en casa: recordatorios de medicación con voz, videollamadas simples y avisos a la familia. Preventa en Argentina con 30% de descuento sobre el precio de lanzamiento.",
+      "description": "Dispositivo de acompañamiento para personas mayores en casa: recordatorios de medicación con voz, videollamadas simples, música, mensajes de voz y avisos a la familia. Preventa en Argentina con 30% de descuento sobre el precio de lanzamiento.",
       "image": [
         "https://selmi.ai/img/selmi-hero.webp",
         "https://selmi.ai/img/selmi-dispositivo.webp"
@@ -44,13 +44,11 @@
       "brand": { "@type": "Brand", "name": "SELMI" },
       "url": "https://selmi.ai/preorden/",
       "offers": {
-        "@type": "AggregateOffer",
+        "@type": "Offer",
         "url": "https://selmi.ai/preorden/",
         "priceCurrency": "ARS",
-        "lowPrice": "59500",
-        "highPrice": "99400",
-        "offerCount": "3",
-        "availability": "https://schema.org/PreOrder"
+        "availability": "https://schema.org/PreOrder",
+        "description": "Precio de lanzamiento a confirmar. Preventa con 30% de descuento para las primeras familias, sin cargo hasta confirmar."
       }
     },
     {
@@ -366,8 +364,8 @@ footer{background:var(--text);padding:60px 24px 32px;margin-top:40px}
 <section id="planes">
   <div class="wrap center">
     <span class="stag">Planes y precios</span>
-    <h2 class="stitle">Precio de lanzamiento con <em>30% OFF</em></h2>
-    <p class="ssub">Precios para Argentina. Preventa de lanzamiento: 30% OFF para las primeras 200 familias, con precio congelado por 12 meses desde la activación.</p>
+    <h2 class="stitle">Planes de lanzamiento con <em>30% OFF</em></h2>
+    <p class="ssub">El precio mensual se anuncia antes del lanzamiento. Preventa: 30% OFF sobre el precio de lanzamiento para las primeras 200 familias, con precio congelado por 12 meses desde la activación.</p>
     <div class="plans" id="plans"><!-- se renderiza por JS con hydrate del ERP + fallback --></div>
     <div class="pay-opts">
       <span class="pay-opt">💳 Suscripción mensual</span>
@@ -375,7 +373,7 @@ footer{background:var(--text);padding:60px 24px 32px;margin-top:40px}
       <span class="pay-opt">🤝 Dispositivo en comodato incluido</span>
     </div>
     <div class="pricing-note">
-      Los precios de preventa tienen 30% de descuento sobre el precio de lanzamiento y quedan
+      El precio de lanzamiento se comunica antes de confirmar cualquier preorden. Los precios de preventa tienen 30% de descuento sobre ese precio y quedan
       <strong>congelados por 12 meses desde la activación</strong>. Al cumplirse ese período, tu plan
       pasa al precio de lista vigente con <strong>60 días de aviso</strong> — o lo congelás 12 meses
       más con el plan anual. La preorden
@@ -619,13 +617,13 @@ const FALLBACK = {
   discountPercent: 30,
   plans: [
     { key:"essential", name:"SELMI Esencial", tagline:"Para empezar a acompañar y estar tranquilos.", recommended:false,
-      listPriceMonthly:85000, preorderPriceMonthly:59500,
+      listPriceMonthly:0, preorderPriceMonthly:0,
       features:["Equipo SELMI configurado","Panel / app familiar","Recordatorios básicos","Reporte semanal","Alertas básicas","Soporte inicial"] },
     { key:"complete", name:"SELMI Completo", tagline:"Recomendado para adultos mayores que viven solos.", recommended:true,
-      listPriceMonthly:110000, preorderPriceMonthly:77000,
+      listPriceMonthly:0, preorderPriceMonthly:0,
       features:["Todo lo del Esencial","Reportes diarios","Mayor personalización","Estimulación cognitiva","Videollamada familiar"] },
     { key:"premium", name:"SELMI Premium", tagline:"Cuidado avanzado y seguimiento prioritario.", recommended:false,
-      listPriceMonthly:142000, preorderPriceMonthly:99400,
+      listPriceMonthly:0, preorderPriceMonthly:0,
       features:["Todo lo del Completo","Mayor seguimiento","Alertas avanzadas","Configuración prioritaria","Soporte prioritario","Preparado para futuras integraciones de salud"] },
   ],
 };
@@ -677,9 +675,8 @@ function renderPlans(cfg){
       ${p.recommended?'<div class="rlabel">Más elegido</div>':''}
       <h3>${p.name}</h3>
       <div class="tag">${p.tagline||''}</div>
-      <div class="price-old">Lista: ${money(p.listPriceMonthly)}/mes</div>
-      <div class="price-new">${money(p.preorderPriceMonthly)}<small>/mes</small></div>
-      <div class="save">${cfg.discountPercent}% OFF preventa</div>
+      <div class="price-new" style="font-size:22px">Precio a confirmar</div>
+      <div class="save">${cfg.discountPercent}% OFF preventa sobre el precio de lanzamiento</div>
       <div style="font-size:12px;color:var(--text3,#6B7A8C);margin-top:4px">🤝 Dispositivo en comodato · solo pagás la mensualidad</div>
       <ul class="pfeat">${(p.features||[]).map(f=>`<li>${f}</li>`).join('')}</ul>
       <a href="#preorden" class="btn btn-md btn-primary btn-block" data-plan="${p.key}" data-cta="plan_${p.key}">Preordenar ${p.name.replace('SELMI ','')}</a>
