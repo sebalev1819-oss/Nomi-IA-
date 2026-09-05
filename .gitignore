@@ -1,3 +1,9 @@
 # Material para redes sociales — no forma parte del sitio ni del deploy
 *.mp4
 SEÑOR DESAYUNANDO .jpeg
+
+# Local Netlify folder
+.netlify
+
+# Salidas de pruebas QA locales (capturas/videos) — no se versionan
+dogfood-output/
