@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Voice and screen companion for older adults | SELMI</title>
+
+<meta content="Explore the SELMI prototype: voice and screen for conversation, reminders and activities. Check available features and the planned launch in Argentina." name="description"/>
+
+<meta content="#7ADBD0" name="theme-color"/>
+
+<meta content="Voice and screen companion for older adults | SELMI" property="og:title"/>
+
+<meta content="Explore the SELMI prototype: voice and screen for conversation, reminders and activities. Check available features and the planned launch in Argentina." property="og:description"/>
+
+<meta content="https://selmi.ai/img/selmi-hero.webp" property="og:image"/>
+
+<link href="/selmi-logo.png" rel="icon"/>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+
+<style>
+
+  :root{
+
+    --cream:#F8F9FC;--terra:#7ADBD0;--terra2:#5ABBB0;--amber:#A8C0E8;--amber2:#8AA2CA;
+
+    --sage:#C5A8E8;--sage2:#A588C8;--text:#1F2937;--text2:#6B7280;--text3:#9CA3AF;
+
+    --border:#E5E7EB;--card:#FFFFFF;
+
+    --sh:0 2px 20px rgba(31,41,55,.07);--sh2:0 12px 44px rgba(31,41,55,.13);
+
+    --grad:linear-gradient(90deg,#5ABBB0,#8AA2CA 55%,#A588C8);
+
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  html{scroll-behavior:smooth}
+
+  body{font-family:'Nunito',sans-serif;color:var(--text);background:var(--cream);line-height:1.55;overflow-x:hidden}
+
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+
+
+
+  /* nav */
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+
+  .logo{font-family:'Inter',sans-serif;font-weight:900;font-size:24px;letter-spacing:8px;
+
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+
+  nav a.back{font-size:13.5px;color:var(--text2);text-decoration:none;font-weight:600}
+
+  nav a.back:hover{color:var(--terra2)}
+
+
+
+  /* hero */
+
+  .hero{position:relative;padding:34px 0 46px}
+
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;z-index:0;pointer-events:none}
+
+  .blob.b1{width:380px;height:380px;background:#BFEDE7;top:-120px;right:-120px}
+
+  .blob.b2{width:300px;height:300px;background:#E2D6F5;bottom:-100px;left:-110px}
+
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+
+  .eyebrow{display:inline-block;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:2.5px;
+
+    text-transform:uppercase;color:var(--terra2);background:rgba(122,219,208,.16);border-radius:999px;padding:6px 14px;margin-bottom:14px}
+
+  h1{font-family:'Inter',sans-serif;font-size:38px;line-height:1.15;font-weight:900;letter-spacing:-.5px}
+
+  h1 .gr{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .hero p{margin-top:14px;font-size:16.5px;color:var(--text2);max-width:46ch}
+
+  .hero-img{position:relative}
+
+  .hero-img img{width:100%;border-radius:22px;box-shadow:var(--sh2);display:block;aspect-ratio:auto;object-fit:contain}
+
+  .hero-chip{position:absolute;left:-14px;bottom:18px;background:#fff;border-radius:14px;box-shadow:var(--sh2);
+
+    padding:10px 14px;font-size:13px;font-weight:700;display:flex;gap:8px;align-items:center}
+
+  .hero-chip .dot{width:9px;height:9px;border-radius:50%;background:#34C759;box-shadow:0 0 0 4px rgba(52,199,89,.18)}
+
+
+
+  /* sections */
+
+  section{padding:34px 0}
+
+  .sec-head{text-align:center;max-width:60ch;margin:0 auto 26px}
+
+  h2{font-family:'Inter',sans-serif;font-size:26px;font-weight:800;letter-spacing:-.3px}
+
+  .sec-head p{color:var(--text2);margin-top:8px;font-size:15px}
+
+
+
+  /* pasos */
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+  .step{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:var(--sh);
+
+    transition:transform .2s}
+
+  .step:hover{transform:translateY(-3px)}
+
+  .stepnum{width:40px;height:40px;border-radius:12px;background:var(--grad);color:#fff;display:flex;align-items:center;
+
+    justify-content:center;font-family:'Inter',sans-serif;font-weight:800;font-size:17px;margin-bottom:12px}
+
+  .step b{display:block;font-family:'Inter',sans-serif;font-size:15.5px;margin-bottom:6px}
+
+  .step span{font-size:13.5px;color:var(--text2)}
+
+
+
+  /* features con foto */
+
+  .feats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+  .feat{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--sh);
+
+    display:grid;grid-template-columns:132px 1fr;transition:transform .2s}
+
+  .feat:hover{transform:translateY(-3px)}
+
+  .feat img{width:132px;height:100%;object-fit:cover;display:block}
+
+  .feat .fx{padding:16px 18px;align-self:center}
+
+  .feat b{display:block;font-family:'Inter',sans-serif;font-size:15px;margin-bottom:4px}
+
+  .feat span{font-size:13px;color:var(--text2)}
+
+
+
+  /* planes */
+
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+
+  .plan{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px 20px;box-shadow:var(--sh);
+
+    display:flex;flex-direction:column;text-align:center;position:relative}
+
+  .plan.reco{border:2px solid transparent;background:
+
+    linear-gradient(#fff,#fff) padding-box, var(--grad) border-box;box-shadow:var(--sh2);transform:scale(1.03)}
+
+  .plan .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;
+
+    font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;border-radius:999px;padding:4px 14px;white-space:nowrap}
+
+  .plan h3{font-family:'Inter',sans-serif;font-size:17px;font-weight:800;margin-bottom:2px}
+
+  .plan .sub{font-size:12.5px;color:var(--text2);min-height:34px}
+
+  .plan .old{color:var(--text3);text-decoration:line-through;font-size:14px;margin-top:10px}
+
+  .plan .now{font-family:'Inter',sans-serif;font-weight:900;font-size:31px;letter-spacing:-1px;
+
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .plan .per{font-size:12px;color:var(--text2);margin-bottom:14px}
+
+  .plan ul{list-style:none;text-align:left;font-size:13px;color:var(--text);margin-top:4px;flex:1}
+
+  .plan ul li{padding:5px 0 5px 24px;position:relative;border-top:1px dashed var(--border)}
+
+  .plan ul li:first-child{border-top:0}
+
+  .plan ul li::before{content:"✓";position:absolute;left:2px;color:var(--terra2);font-weight:800}
+
+  .promo{margin-top:18px;text-align:center;font-size:14.5px;background:linear-gradient(90deg,rgba(122,219,208,.16),rgba(168,192,232,.16),rgba(197,168,232,.16));
+
+    border:1px solid var(--border);border-radius:14px;padding:13px 16px}
+
+
+
+  /* cta */
+
+  .cta{background:var(--grad);border-radius:24px;padding:34px 28px;text-align:center;color:#fff;position:relative;overflow:hidden}
+
+  .cta h2{color:#fff}
+
+  .cta p{opacity:.92;margin:8px auto 20px;max-width:50ch;font-size:15px}
+
+  .btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+
+  .btn{display:inline-block;text-decoration:none;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;
+
+    border-radius:999px;padding:12px 22px;transition:transform .15s}
+
+  .btn:hover{transform:translateY(-2px)}
+
+  .btn.solid{background:#fff;color:var(--text)}
+
+  .btn.ghost{border:1.5px solid rgba(255,255,255,.75);color:#fff}
+
+  .note{margin:18px auto 0;font-size:11.5px;color:var(--text2);text-align:center;max-width:70ch}
+
+  footer{margin-top:10px;padding:22px 0 30px;text-align:center;color:var(--text3);font-size:12.5px}
+
+
+
+  @media (max-width:760px){
+
+    .hero-grid{grid-template-columns:1fr}
+
+    .hero-img{order:-1}
+
+    h1{font-size:29px}
+
+    .steps,.plans{grid-template-columns:1fr}
+
+    .feats{grid-template-columns:1fr}
+
+    .plan.reco{transform:none}
+
+  }
+
+  @media print{
+
+    body{background:#fff}
+
+    .blob,nav a.back{display:none}
+
+    .step,.plan,.feat,.promo{box-shadow:none;break-inside:avoid}
+
+    .hero{padding:10px 0}
+
+    section{padding:14px 0}
+
+    .cta{color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+    @page{size:A4;margin:12mm}
+
+  }
+
+
+
+  .seo-details h3{font-family:'Inter',sans-serif;font-size:16px;line-height:1.35;margin-bottom:12px}
+
+  .seo-details p{font-size:14px;color:var(--text2);margin-bottom:14px;line-height:1.65}
+
+  .seo-details a{font-size:13px;font-weight:700;color:var(--text);text-underline-offset:3px}
+
+  .product-faq details{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:17px 20px;margin:12px 0}
+
+  .product-faq summary{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer}
+
+  .product-faq p{font-size:14px;line-height:1.7;color:var(--text2);margin-top:12px}
+
+  .seo-details [id]{scroll-margin-top:24px}
+
+</style>
+
+<!-- Meta Pixel Code -->
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '27654960004124680');
+fbq('track', 'PageView');
+</script>
+
+<noscript><img alt="" height="1" src="https://www.facebook.com/tr?id=27654960004124680&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+
+<!-- End Meta Pixel Code -->
+
+<meta content="Voice and screen companion for older adults | SELMI" name="twitter:title"/><meta content="Explore the SELMI prototype: voice and screen for conversation, reminders and activities. Check available features and the planned launch in Argentina." name="twitter:description"/><meta content="index, follow, max-image-preview:large" name="robots"/><link href="https://selmi.ai/en/product/" rel="canonical"/><style>.hero{overflow:hidden}</style><meta content="website" property="og:type"/><meta content="en_US" property="og:locale"/><meta content="SELMI" property="og:site_name"/><meta content="https://selmi.ai/en/product/" property="og:url"/><meta content="1600" property="og:image:width"/><meta content="900" property="og:image:height"/><meta content="An older adult with SELMI at home" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://selmi.ai/img/selmi-hero.webp" name="twitter:image"/><meta content="An older adult with SELMI at home" name="twitter:image:alt"/><style>.card img,.hero-img img{height:auto}</style><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://selmi.ai/en/product/#webpage",
+      "url": "https://selmi.ai/en/product/",
+      "name": "Voice and screen companion for older adults | SELMI",
+      "description": "Explore the SELMI prototype: voice and screen for conversation, reminders and activities. Check available features and the planned launch in Argentina.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://selmi.ai/#website"
+      },
+      "publisher": {
+        "@id": "https://selmi.ai/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://selmi.ai/en/product/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://selmi.ai/en/product/#product"
+      },
+      "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://selmi.ai/en/product/#recordatorios-medicacion",
+          "name": "Medication reminders by voice"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://selmi.ai/en/product/#videollamadas",
+          "name": "Video calls with the family"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://selmi.ai/en/product/#aplicacion-familiar",
+          "name": "An app for the family"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://selmi.ai/en/product/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://selmi.ai/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Voice companion for older adults",
+          "item": "https://selmi.ai/en/product/"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://selmi.ai/en/product/#product",
+      "name": "SELMI",
+      "url": "https://selmi.ai/en/product/",
+      "description": "Explore the SELMI prototype: voice and screen for conversation, reminders and activities. Check available features and the planned launch in Argentina.",
+      "image": [
+        "https://selmi.ai/img/selmi-dispositivo.webp",
+        "https://selmi.ai/img/selmi-hero.webp"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "SELMI"
+      },
+      "manufacturer": {
+        "@id": "https://selmi.ai/#organization"
+      },
+      "disambiguatingDescription": "Prototype in development; ask which features are available."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://selmi.ai/en/product/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does SELMI need to work at home?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The device needs power and a WiFi connection. Ask the team how it is configured for your home and what happens if the connection is interrupted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the older adult need to know how to use a phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The older adult uses SELMI by voice and touchscreen. The family app is still in development. Try the sound and controls together with the person who will use it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does an alert in the family app mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It indicates a configured situation, such as a request for help or an unconfirmed reminder. The family can try to get in touch to understand what happened. SELMI is not a fall detector, does not make diagnoses, and does not replace emergency services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check plans and availability in Argentina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Submit an availability inquiry. The team confirms the plan, monthly fee, and delivery before you subscribe. Launch pricing is still being defined."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+
+<link rel="alternate" hreflang="es" href="https://selmi.ai/producto/"/>
+
+<link rel="alternate" hreflang="en" href="https://selmi.ai/en/product/"/>
+
+<link rel="alternate" hreflang="x-default" href="https://selmi.ai/producto/"/>
+
+<link rel="stylesheet" href="/assets/language-switch.css"/>
+
+<script defer src="/assets/language-switch.js"></script>
+
+<link rel="stylesheet" href="/assets/site-trust.css"/>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<nav class="lang-header">
+
+<a class="logo" href="/en/">SELMI</a>
+
+<a class="back" href="/en/">← back to selmi.ai</a>
+
+<div class="lang-switch" role="group" aria-label="Website language"><a href="/producto/" lang="es" hreflang="es">Español</a><a href="/en/product/" lang="en" hreflang="en" aria-current="page">English</a></div></nav>
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/en/">Home</a></li><li aria-current="page">SELMI product</li></ol></nav>
+
+<div class="hero">
+
+<div class="blob b1"></div><div class="blob b2"></div>
+
+<div class="hero-grid">
+
+<div>
+
+<span class="eyebrow">Product information · 2026 preorders</span>
+
+<h1>A voice companion for <span class="gr">older adults</span></h1><p class="prototype-note" style="font-size:13px;color:var(--text2);margin:12px 0;line-height:1.5">Prototype in development. Illustrations show the intended experience; ask about available features.</p>
+
+<p><b>SELMI is an AI companion</b> for older adults. The proposed experience combines conversation, configured reminders, activities, and family contact. It uses <b>voice and a touchscreen</b>; ask which features are available in each version.</p>
+
+</div>
+
+<div class="hero-img">
+
+<img alt="An older adult talking to SELMI at home" decoding="async" fetchpriority="high" height="900" src="/img/producto-hero.webp" width="1200"/>
+
+<div class="hero-chip"><span class="dot"></span> SELMI, keeping them company every day</div>
+
+</div>
+
+</div>
+
+</div>
+
+<section>
+
+<div class="sec-head">
+
+<h2>How it works</h2>
+
+<p>Agreed setup and testing with the person, in three steps.</p>
+
+</div>
+
+<div class="steps">
+
+<div class="step"><div class="stepnum">1</div><b>Prepare the device</b><span>Placement, WiFi, and sound and screen checks. <a href="/en/resources/simple-technology-for-older-adults/">What to try at home →</a></span></div>
+
+<div class="step"><div class="stepnum">2</div><b>Voice and touchscreen</b><span>Conversation and touch controls, with voice and accessibility to be tested on the device.</span></div>
+
+<div class="step"><div class="stepnum">3</div><b>The family stays involved</b><span>Profile, reminders, and family contact: a proposed experience with the app still in development.</span></div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="sec-head">
+
+<h2>What it does for your family</h2>
+
+<p>Conversation, activities, and family contact to support everyday life.</p>
+
+</div>
+
+<div class="feats">
+
+<div class="feat"><img alt="Conversation and company" decoding="async" height="1200" loading="lazy" src="/img/producto-bienestar.webp" width="992"/><div class="fx"><b>💬 Conversation and company</b><span>Conversation about personal interests, with time to listen and respond. Device integration still needs testing.</span></div></div>
+
+<div class="feat"><img alt="Medication reminders" decoding="async" height="675" loading="lazy" src="/img/producto-medicacion.webp" width="1200"/><div class="fx"><b>💊 Voice reminders</b><span>Agreed schedules for medication, appointments, and routines. Responses are recorded; family alerts are still in development.</span></div></div>
+
+<div class="feat"><img alt="Family alerts" decoding="async" height="1200" loading="lazy" src="/img/producto-caida.webp" width="675"/><div class="fx"><b>📱 Family alerts</b><span>Proposed alerts start with an explicit request for help or an unconfirmed reminder. Delivery to the authorized contact must be verified.</span></div></div>
+
+<div class="feat"><img alt="Family video calls" decoding="async" height="1200" loading="lazy" src="/img/producto-videollamada.webp" width="675"/><div class="fx"><b>🧩 Games and video calls</b><span>Local games and family calls still in development, depending on the selected plan. <a href="/en/resources/memory-games-for-older-adults/">Ideas for playing together →</a></span></div></div>
+
+</div>
+
+</section>
+
+<section aria-labelledby="uso-en-casa">
+
+<div class="sec-head"><h2 id="uso-en-casa">Support for older adults at home</h2><p>Reminders, conversations, and family contact as part of an agreed routine.</p></div>
+
+<div class="steps seo-details">
+
+<article class="step" id="recordatorios-medicacion"><h3>Medication reminders by voice</h3><p>The family agrees on schedules following the healthcare professional's instructions. The prototype records responses; alerts to authorized contacts are still in development.</p><p>A confirmation records what the person reported. The device does not prescribe medication or independently verify that it was taken.</p><a href="/en/resources/medication-reminders-for-older-adults/">How to organize reminders →</a></article>
+
+<article class="step" id="videollamadas"><h3>Video calls with the family</h3><p>A screen, camera, and speaker for the proposed video-call experience, still in development. Available features depend on the selected plan.</p><p>Agree on times and contact settings with the person. A video call also offers a way to talk after an alert; it does not replace professional care.</p><a href="/en/resources/video-calls-for-older-adults/">Prepare a comfortable video call →</a></article>
+
+<article class="step" id="aplicacion-familiar"><h3>An app for the family</h3><p>The person uses SELMI at home. The family app is designed for profiles, reminders, reports, and alerts, depending on the configuration and plan.</p><p>If an alert arrives, the configured contacts can try to get in touch and check how the person is. This helps organize support; it is not a diagnosis.</p><a href="/en/resources/support-older-adults-remotely/">Supporting an older adult from afar →</a></article>
+
+</div></section>
+
+<section aria-labelledby="preguntas-producto" class="product-faq"><div class="sec-head"><h2 id="preguntas-producto">Questions about the device and app</h2></div><details><summary>What does SELMI need to work at home?</summary><p>The device needs power and a WiFi connection. Ask the team how it is configured for your home and what happens if the connection is interrupted.</p></details><details><summary>Does the older adult need to know how to use a phone?</summary><p>The older adult uses SELMI by voice and touchscreen. The family app is still in development. Try the sound and controls together with the person who will use it.</p></details><details><summary>What does an alert in the family app mean?</summary><p>It indicates a configured situation, such as a request for help or an unconfirmed reminder. The family can try to get in touch to understand what happened. SELMI is not a fall detector, does not make diagnoses, and does not replace emergency services.</p></details><details><summary>How do I check plans and availability in Argentina?</summary><p>Submit an availability inquiry. The team confirms the plan, monthly fee, and delivery before you subscribe. Launch pricing is still being defined.</p></details></section><section>
+
+<div class="sec-head">
+
+<h2>Plans — Launch preorders</h2>
+
+<p>Pricing to be confirmed. The final fee is confirmed before you subscribe.</p>
+
+</div>
+
+<div class="plans">
+
+<div class="plan">
+
+<h3>SELMI Essential</h3>
+
+<div class="sub">A first step toward everyday company and peace of mind</div>
+
+<div class="now" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
+
+<div class="per">Monthly fee to be confirmed</div>
+
+<ul>
+
+<li>Configured SELMI device</li>
+
+<li>App for the family</li>
+
+<li>Basic reminders</li>
+
+<li>Weekly report</li>
+
+<li>Basic alerts</li>
+
+</ul>
+
+</div>
+
+<div class="plan reco">
+
+<div class="tag">RECOMMENDED</div>
+
+<h3>SELMI Complete</h3>
+
+<div class="sub">For older adults who live alone</div>
+
+<div class="now" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
+
+<div class="per">Monthly fee to be confirmed</div>
+
+<ul>
+
+<li>Everything in Essential</li>
+
+<li>Daily reports</li>
+
+<li>Cognitive stimulation</li>
+
+<li>Family video calls</li>
+
+<li>Greater personalization</li>
+
+</ul>
+
+</div>
+
+<div class="plan">
+
+<h3>SELMI Premium</h3>
+
+<div class="sub">Advanced support and priority follow-up</div>
+
+<div class="now" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
+
+<div class="per">Monthly fee to be confirmed</div>
+
+<ul>
+
+<li>Everything in Complete</li>
+
+<li>Closer follow-up</li>
+
+<li>Advanced alerts</li>
+
+<li>Priority support</li>
+
+<li>Ready for health integrations</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="promo">Launching first in Argentina · Check availability · No payment today</div>
+
+</section>
+
+<section>
+
+<div class="cta">
+
+<h2>Reserve your place in the preorder launch</h2>
+
+<p>Ask about availability in your city. We'll contact you to confirm pricing, your plan, and delivery before you subscribe.</p>
+
+<div class="btns">
+
+<a class="btn solid" href="/en/preorder/">Reserve your place with SELMI</a>
+
+<a class="btn ghost" href="https://m.me/1229995960188159">💬 Messenger</a>
+
+<a class="btn ghost" href="https://instagram.com/selmi.latam">📷 @selmi.latam</a>
+
+<a class="btn ghost" href="mailto:info@selmi.ai">✉️ info@selmi.ai</a>
+
+</div>
+
+</div>
+
+<p class="note">SELMI provides company, reminders, and alerts. It does not replace medical care, professional caregivers, or emergency services.</p>
+
+</section>
+
+<footer>SELMI · selmi.ai · Buenos Aires, Argentina · 2026<p><a href="/en/resources/">Guides for families</a> · <a href="/en/preorder/">Check availability</a></p><div class="site-identity"><a href="/en/about/">About SELMI and the team</a><span aria-hidden="true">·</span><a href="/en/about/#editorial">How we prepare our guides</a></div></footer>
+
+</div>
+
+</body>
+
+</html>
+
