@@ -41,3 +41,11 @@ La portada explica el acompañante digital para personas mayores. Las preguntas 
 La validación final cubre 20 páginas, 648 destinos internos y una profundidad máxima de dos enlaces desde el inicio. Se revisaron las vistas de escritorio y celular, las FAQ y el menú con teclado, y el cambio de idioma. Se conservaron los atributos de formularios y sus scripts. Informe, evidencias y copia recuperable en `../output/seo-20261015-etapa2/`.
 
 Esta segunda revisión sigue local en `http://127.0.0.1:4179/`, pendiente de revisión del usuario. Se mantiene el procedimiento de confirmación para publicar. Las observaciones legales ya registradas siguen en su revisión correspondiente; esta edición no altera esos términos.
+
+## Publicación autorizada: bloqueada por saldo de Netlify
+
+El usuario autorizó la publicación. El código de la versión revisada se guardó y envió a `main` en GitHub con el commit `c905b239ff3e54306b808e80cd687e50bc6d32e5`.
+
+Netlify creó el despliegue `6ad0c24f63f88981b36fa511`, pero lo omitió con el mensaje `Skipped due to account credit usage exceeded`. No publicó los cambios: continúa activa la versión `6ac4d77ec7fb760693be0ab7`, del 6 de octubre. No se compraron créditos ni se cambiaron planes o recargas automáticas.
+
+Para retomar: habilitar saldo en la cuenta existente y desplegar el código ya enviado. El paquete público, la evidencia del bloqueo y los resultados de QA están en `../output/seo-20261015-etapa2/`. La vista previa local sigue disponible.
