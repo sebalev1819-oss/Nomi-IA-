@@ -49,3 +49,9 @@ El usuario autorizó la publicación. El código de la versión revisada se guar
 Netlify creó el despliegue `6ad0c24f63f88981b36fa511`, pero lo omitió con el mensaje `Skipped due to account credit usage exceeded`. No publicó los cambios: continúa activa la versión `6ac4d77ec7fb760693be0ab7`, del 6 de octubre. No se compraron créditos ni se cambiaron planes o recargas automáticas.
 
 Para retomar: habilitar saldo en la cuenta existente y desplegar el código ya enviado. El paquete público, la evidencia del bloqueo y los resultados de QA están en `../output/seo-20261015-etapa2/`. La vista previa local sigue disponible.
+
+## Ícono del sitio (10 de noviembre de 2026)
+
+El ícono que mostraban Google y las pestañas del navegador (`selmi-logo.png`) era un logo viejo: una red hexagonal con la palabra en blanco. Se reemplazó por la «S» del logo oficial, recortada de `brand/social/video-campana-60s/vertical-redes-v5-logo/logo-original-extraido.png`, sobre fondo blanco: `favicon.ico` (16, 32 y 48 px), `icon-192.png` y `apple-touch-icon.png`. Las 20 páginas apuntan a esos archivos. `selmi-logo.png` queda en el sitio por si otra página lo usa.
+
+El usuario autorizó publicarlo junto con lo que estaba en `main` y nunca había salido: los ajustes del 15 de octubre descritos arriba.
