@@ -142,11 +142,12 @@
 
   .feat{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--sh);
 
-    display:grid;grid-template-columns:132px 1fr;transition:transform .2s}
+    display:grid;grid-template-columns:132px 1fr;min-height:132px;transition:transform .2s}
 
   .feat:hover{transform:translateY(-3px)}
 
-  .feat img{width:132px;height:100%;object-fit:cover;display:block}
+  /* height:0 + min-height:100% keeps a tall photo from stretching the whole row */
+  .feat img{width:132px;height:0;min-height:100%;object-fit:cover;display:block}
 
   .feat .fx{padding:16px 18px;align-self:center}
 
@@ -461,7 +462,7 @@ fbq('track', 'PageView');
 
 <div class="hero-img">
 
-<img alt="Adulto mayor conversando con SELMI en su hogar" decoding="async" fetchpriority="high" height="900" src="/img/producto-hero.webp" width="1200"/>
+<img alt="Pantalla de inicio de SELMI con el saludo «Buenas tardes» y la pregunta «¿En qué puedo ayudarte hoy?»" decoding="async" fetchpriority="high" height="900" src="/img/producto-hero.webp" width="1200"/>
 
 <div class="hero-chip"><span class="dot"></span> SELMI acompañando, todos los días</div>
 
@@ -505,11 +506,11 @@ fbq('track', 'PageView');
 
 <div class="feats">
 
-<div class="feat"><img alt="Conversación y compañía" decoding="async" height="1200" loading="lazy" src="/img/producto-bienestar.webp" width="992"/><div class="fx"><b>💬 Conversación y compañía</b><span>Conversación sobre sus intereses, con voz y escucha a su ritmo. Integración en el equipo por validar.</span></div></div>
+<div class="feat"><img alt="Una señora mayor sonríe en su cama junto al equipo SELMI, que la saluda por su nombre" decoding="async" height="720" loading="lazy" src="/img/producto-compania.webp" width="720"/><div class="fx"><b>💬 Conversación y compañía</b><span>Conversación sobre sus intereses, con voz y escucha a su ritmo. Integración en el equipo por validar.</span></div></div>
 
-<div class="feat"><img alt="Recordatorio de medicación" decoding="async" height="675" loading="lazy" src="/img/producto-medicacion.webp" width="1200"/><div class="fx"><b>💊 Recordatorios con voz</b><span>Horarios acordados para medicación, citas y rutinas. Se registran respuestas; los avisos familiares están en integración.</span></div></div>
+<div class="feat"><img alt="El equipo SELMI muestra «Recordá tomar tu medicación» junto a un vaso de agua y un pastillero" decoding="async" height="720" loading="lazy" src="/img/producto-recordatorio.webp" width="720"/><div class="fx"><b>💊 Recordatorios con voz</b><span>Horarios acordados para medicación, citas y rutinas. Se registran respuestas; los avisos familiares están en integración.</span></div></div>
 
-<div class="feat"><img alt="Avisos a la familia" decoding="async" height="1200" loading="lazy" src="/img/producto-caida.webp" width="675"/><div class="fx"><b>📱 Avisos a la familia</b><span>Los avisos propuestos parten de un pedido explícito de ayuda o un recordatorio sin confirmar. La entrega al contacto se debe verificar.</span></div></div>
+<div class="feat"><img alt="Una mujer sentada en un auto mira hacia abajo y sonríe" decoding="async" height="720" loading="lazy" src="/img/producto-avisos.webp" width="720"/><div class="fx"><b>📱 Avisos a la familia</b><span>Los avisos propuestos parten de un pedido explícito de ayuda o un recordatorio sin confirmar. La entrega al contacto se debe verificar.</span></div></div>
 
 <div class="feat"><img alt="Videollamada familiar" decoding="async" height="1200" loading="lazy" src="/img/producto-videollamada.webp" width="675"/><div class="fx"><b>🧩 Juegos y videollamadas</b><span>Juegos locales y llamadas familiares en integración, según el plan elegido. <a href="/recursos/juegos-memoria-adultos-mayores/">Ideas para jugar en familia →</a></span></div></div>
 

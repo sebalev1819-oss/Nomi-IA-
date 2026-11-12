@@ -142,11 +142,12 @@
 
   .feat{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--sh);
 
-    display:grid;grid-template-columns:132px 1fr;transition:transform .2s}
+    display:grid;grid-template-columns:132px 1fr;min-height:132px;transition:transform .2s}
 
   .feat:hover{transform:translateY(-3px)}
 
-  .feat img{width:132px;height:100%;object-fit:cover;display:block}
+  /* height:0 + min-height:100% keeps a tall photo from stretching the whole row */
+  .feat img{width:132px;height:0;min-height:100%;object-fit:cover;display:block}
 
   .feat .fx{padding:16px 18px;align-self:center}
 
@@ -457,7 +458,7 @@ fbq('track', 'PageView');
 
 <div class="hero-img">
 
-<img alt="An older adult talking to SELMI at home" decoding="async" fetchpriority="high" height="900" src="/img/producto-hero.webp" width="1200"/>
+<img alt="SELMI home screen, in Spanish, with a greeting and the question “How can I help you today?”" decoding="async" fetchpriority="high" height="900" src="/img/producto-hero.webp" width="1200"/>
 
 <div class="hero-chip"><span class="dot"></span> SELMI, keeping them company every day</div>
 
@@ -501,11 +502,11 @@ fbq('track', 'PageView');
 
 <div class="feats">
 
-<div class="feat"><img alt="Conversation and company" decoding="async" height="1200" loading="lazy" src="/img/producto-bienestar.webp" width="992"/><div class="fx"><b>💬 Conversation and company</b><span>Conversation about personal interests, with time to listen and respond. Device integration still needs testing.</span></div></div>
+<div class="feat"><img alt="An older woman smiles in bed next to the SELMI device, which greets her by name" decoding="async" height="720" loading="lazy" src="/img/producto-compania.webp" width="720"/><div class="fx"><b>💬 Conversation and company</b><span>Conversation about personal interests, with time to listen and respond. Device integration still needs testing.</span></div></div>
 
-<div class="feat"><img alt="Medication reminders" decoding="async" height="675" loading="lazy" src="/img/producto-medicacion.webp" width="1200"/><div class="fx"><b>💊 Voice reminders</b><span>Agreed schedules for medication, appointments, and routines. Responses are recorded; family alerts are still in development.</span></div></div>
+<div class="feat"><img alt="The SELMI device shows a medication reminder next to a glass of water and a pill organizer" decoding="async" height="720" loading="lazy" src="/img/producto-recordatorio.webp" width="720"/><div class="fx"><b>💊 Voice reminders</b><span>Agreed schedules for medication, appointments, and routines. Responses are recorded; family alerts are still in development.</span></div></div>
 
-<div class="feat"><img alt="Family alerts" decoding="async" height="1200" loading="lazy" src="/img/producto-caida.webp" width="675"/><div class="fx"><b>📱 Family alerts</b><span>Proposed alerts start with an explicit request for help or an unconfirmed reminder. Delivery to the authorized contact must be verified.</span></div></div>
+<div class="feat"><img alt="A woman sitting in a car looks down and smiles" decoding="async" height="720" loading="lazy" src="/img/producto-avisos.webp" width="720"/><div class="fx"><b>📱 Family alerts</b><span>Proposed alerts start with an explicit request for help or an unconfirmed reminder. Delivery to the authorized contact must be verified.</span></div></div>
 
 <div class="feat"><img alt="Family video calls" decoding="async" height="1200" loading="lazy" src="/img/producto-videollamada.webp" width="675"/><div class="fx"><b>🧩 Games and video calls</b><span>Local games and family calls still in development, depending on the selected plan. <a href="/en/resources/memory-games-for-older-adults/">Ideas for playing together →</a></span></div></div>
 
@@ -597,7 +598,7 @@ fbq('track', 'PageView');
 
 <h3>SELMI Premium</h3>
 
-<div class="sub">Advanced support and priority follow-up</div>
+<div class="sub">Expanded setup; scope to be confirmed</div>
 
 <div class="now" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
 
