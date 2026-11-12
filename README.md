@@ -55,3 +55,11 @@ Para retomar: habilitar saldo en la cuenta existente y desplegar el código ya e
 El ícono que mostraban Google y las pestañas del navegador (`selmi-logo.png`) era un logo viejo: una red hexagonal con la palabra en blanco. Se reemplazó por la «S» del logo oficial, recortada de `brand/social/video-campana-60s/vertical-redes-v5-logo/logo-original-extraido.png`, sobre fondo blanco: `favicon.ico` (16, 32 y 48 px), `icon-192.png` y `apple-touch-icon.png`. Las 20 páginas apuntan a esos archivos. `selmi-logo.png` queda en el sitio por si otra página lo usa.
 
 El usuario autorizó publicarlo junto con lo que estaba en `main` y nunca había salido: los ajustes del 15 de octubre descritos arriba.
+
+## Frases corregidas (12 de noviembre de 2026)
+
+Se sacaron del sitio frases que SELMI no puede prometer: «bienestar cognitivo» y «al instante» en textos alternativos de la página de inicio, «Estimulación cognitiva» en el plan de producto, «cognitive games» en la versión en inglés y «Detectar alertas y emergencias» en la política de privacidad (ahora: «Avisar a los contactos autorizados ante un pedido de ayuda o un recordatorio sin confirmar»).
+
+Quedó sin tocar, a propósito:
+- Las capturas de la app (`img/selmi-app-bienestar.webp` y `img/en/selmi-app-wellbeing-en-v1.webp`) dicen «Bienestar cognitivo», «Puntuación cognitiva» y «Áreas evaluadas»: es la pantalla real de la app. Sebastián decidió dejarlas hasta que se cambie en la app.
+- El punto 17 de los términos (TLS 1.3 y AES-256, 2FA, auditorías por terceros, aviso de incidentes en 72 hs): falta que Andrés confirme qué está implementado.
