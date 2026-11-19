@@ -400,14 +400,6 @@ fbq('track', 'PageView');
             "@type": "Answer",
             "text": "Indica una situación configurada, como un pedido de ayuda o un recordatorio sin confirmar. La familia puede intentar comunicarse para entender qué ocurrió. SELMI no es un detector de caídas, no hace diagnósticos y no reemplaza servicios de emergencia."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo consulto el plan y la disponibilidad en Argentina?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Completá la consulta de disponibilidad. El equipo confirma el plan, el importe mensual y la entrega antes de contratar. Los precios de lanzamiento están en definición."
-          }
         }
       ]
     }
@@ -425,6 +417,7 @@ fbq('track', 'PageView');
 <script defer src="/assets/language-switch.js"></script>
 
 <link rel="stylesheet" href="/assets/site-trust.css"/>
+<style>/* Precios y planes ocultos del 19-nov al 29-nov-2026 (pedido de Sebastián). Para volver: git revert del commit «sin precios». */[data-sin-precios]{display:none!important}</style>
 </head>
 
 <body>
@@ -532,7 +525,7 @@ fbq('track', 'PageView');
 
 </div></section>
 
-<section aria-labelledby="preguntas-producto" class="product-faq"><div class="sec-head"><h2 id="preguntas-producto">Preguntas sobre el dispositivo y la app</h2></div><details><summary>¿Qué necesita SELMI para funcionar en el hogar?</summary><p>El dispositivo necesita energía y conexión WiFi. Consultá al equipo cómo se configura para tu hogar y qué ocurre si se interrumpe la conexión.</p></details><details><summary>¿La persona mayor necesita saber usar un celular?</summary><p>La persona mayor utiliza el dispositivo SELMI por voz y pantalla táctil. La aplicación familiar sigue en integración. Conviene probar el sonido y los controles junto a quien lo va a usar.</p></details><details><summary>¿Qué significa un aviso en la aplicación familiar?</summary><p>Indica una situación configurada, como un pedido de ayuda o un recordatorio sin confirmar. La familia puede intentar comunicarse para entender qué ocurrió. SELMI no es un detector de caídas, no hace diagnósticos y no reemplaza servicios de emergencia.</p></details><details><summary>¿Cómo consulto el plan y la disponibilidad en Argentina?</summary><p>Completá la consulta de disponibilidad. El equipo confirma el plan, el importe mensual y la entrega antes de contratar. Los precios de lanzamiento están en definición.</p></details></section><section>
+<section aria-labelledby="preguntas-producto" class="product-faq"><div class="sec-head"><h2 id="preguntas-producto">Preguntas sobre el dispositivo y la app</h2></div><details><summary>¿Qué necesita SELMI para funcionar en el hogar?</summary><p>El dispositivo necesita energía y conexión WiFi. Consultá al equipo cómo se configura para tu hogar y qué ocurre si se interrumpe la conexión.</p></details><details><summary>¿La persona mayor necesita saber usar un celular?</summary><p>La persona mayor utiliza el dispositivo SELMI por voz y pantalla táctil. La aplicación familiar sigue en integración. Conviene probar el sonido y los controles junto a quien lo va a usar.</p></details><details><summary>¿Qué significa un aviso en la aplicación familiar?</summary><p>Indica una situación configurada, como un pedido de ayuda o un recordatorio sin confirmar. La familia puede intentar comunicarse para entender qué ocurrió. SELMI no es un detector de caídas, no hace diagnósticos y no reemplaza servicios de emergencia.</p></details><details data-sin-precios><summary>¿Cómo consulto el plan y la disponibilidad en Argentina?</summary><p>Completá la consulta de disponibilidad. El equipo confirma el plan, el importe mensual y la entrega antes de contratar. Los precios de lanzamiento están en definición.</p></details></section><section data-sin-precios>
 
 <div class="sec-head">
 
@@ -636,7 +629,7 @@ fbq('track', 'PageView');
 
 <h2>Reservá tu lugar en la preventa</h2>
 
-<p>Consultá la disponibilidad en tu ciudad. Te contactamos para confirmar el precio, el plan y la entrega antes de contratar.</p>
+<p>Consultá la disponibilidad en tu ciudad. Te contactamos para confirmar el plan y la entrega antes de contratar.</p>
 
 <div class="btns">
 

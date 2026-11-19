@@ -1121,14 +1121,6 @@ fbq('track', 'PageView');
         },
         {
           "@type": "Question",
-          "name": "¿Qué duración tiene la suscripción?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La propuesta es una suscripción anual con el equipo en comodato. El precio, el cobro, la baja y la devolución se detallan en las condiciones acordadas antes de contratar."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "¿En qué países está disponible?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -1151,6 +1143,7 @@ fbq('track', 'PageView');
 <script defer src="/assets/language-switch.js"></script>
 
 <link rel="stylesheet" href="/assets/site-trust.css"/>
+<style>/* Precios y planes ocultos del 19-nov al 29-nov-2026 (pedido de Sebastián). Para volver: git revert del commit «sin precios». */[data-sin-precios]{display:none!important}</style>
 </head>
 
 <body>
@@ -1203,7 +1196,7 @@ fbq('track', 'PageView');
 
 <a href="#funcionalidades">Funcionalidades</a>
 
-<a href="#planes">Planes</a>
+<a data-sin-precios href="#planes">Planes</a>
 
 <a href="/recursos/">Guías</a></nav>
 
@@ -1237,7 +1230,7 @@ fbq('track', 'PageView');
 
 <a href="#funcionalidades" onclick="closeMobNav()">Funcionalidades</a>
 
-<a href="#planes" onclick="closeMobNav()">Planes</a>
+<a data-sin-precios href="#planes" onclick="closeMobNav()">Planes</a>
 
 <a href="/cuenta/login" onclick="closeMobNav()">Mi cuenta</a>
 
@@ -1257,7 +1250,7 @@ fbq('track', 'PageView');
 
 <div class="hc">
 
-<div class="hbadge"><div class="bdot"></div><em>Lanzamiento inicial en Argentina · Precios en definición</em></div>
+<div class="hbadge"><div class="bdot"></div><em>Lanzamiento inicial en Argentina</em></div>
 
 <h1>Un acompañante digital<br/><span class="hg">para personas mayores.</span></h1><p style="font-size:15px;color:var(--text2);margin:16px 0">Conversación con IA, actividades y conexión familiar, en un equipo para el hogar.</p>
 
@@ -1413,7 +1406,7 @@ fbq('track', 'PageView');
 
 <a href="/preorden/" style="background:#2563A8;color:#fff;text-decoration:none;font-family:Outfit,sans-serif;font-size:14px;font-weight:600;padding:13px 28px;border-radius:100px;display:inline-flex;align-items:center;transition:all .2s">Pedir mi SELMI →</a>
 
-<button onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})" style="background:rgba(15,30,46,.07);color:#0F1E2E;border:1px solid rgba(15,30,46,.15);font-family:Outfit,sans-serif;font-size:14px;padding:13px 28px;border-radius:100px;cursor:pointer;transition:all .2s">Ver planes</button>
+<button data-sin-precios onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})" style="background:rgba(15,30,46,.07);color:#0F1E2E;border:1px solid rgba(15,30,46,.15);font-family:Outfit,sans-serif;font-size:14px;padding:13px 28px;border-radius:100px;cursor:pointer;transition:all .2s">Ver planes</button>
 
 </div>
 
@@ -2083,7 +2076,7 @@ fbq('track', 'PageView');
 
 <!-- PLANES -->
 
-<section class="plansbg" id="planes">
+<section class="plansbg" data-sin-precios id="planes">
 
 <div class="container">
 
@@ -2283,7 +2276,7 @@ fbq('track', 'PageView');
 
 <details class="fi2"><summary class="fq"><span>¿Las conversaciones son privadas?</span><span class="fic" aria-hidden="true">+</span></summary><div class="fa">El acceso familiar y la información compartida deben acordarse con la persona. Consultá las funciones disponibles, los proveedores y la política aplicable antes de activar el servicio.</div></details>
 
-<details class="fi2"><summary class="fq"><span>¿Qué duración tiene la suscripción?</span><span class="fic" aria-hidden="true">+</span></summary><div class="fa">La propuesta es una suscripción anual con el equipo en comodato. El precio, el cobro, la baja y la devolución se detallan en las condiciones acordadas antes de contratar.</div></details>
+<details class="fi2" data-sin-precios><summary class="fq"><span>¿Qué duración tiene la suscripción?</span><span class="fic" aria-hidden="true">+</span></summary><div class="fa">La propuesta es una suscripción anual con el equipo en comodato. El precio, el cobro, la baja y la devolución se detallan en las condiciones acordadas antes de contratar.</div></details>
 
 <details class="fi2"><summary class="fq"><span>¿En qué países está disponible?</span><span class="fic" aria-hidden="true">+</span></summary><div class="fa">El lanzamiento inicial está previsto en Argentina. Consultanos por disponibilidad en tu ciudad y por futuras novedades en otros países.</div></details>
 
@@ -2381,7 +2374,7 @@ fbq('track', 'PageView');
 
 </div>
 
-<div><div class="fh">Producto</div><div class="flinks"><a href="#dispositivo">El dispositivo</a><a href="#para-quien">Para quién</a><a href="#como-funciona">Cómo funciona</a><a href="#funcionalidades">Funcionalidades</a><a href="#planes">Planes y precios</a><a href="/producto/">Conocer el producto SELMI</a><a href="/recursos/">Guías para familias</a></div></div>
+<div><div class="fh">Producto</div><div class="flinks"><a href="#dispositivo">El dispositivo</a><a href="#para-quien">Para quién</a><a href="#como-funciona">Cómo funciona</a><a href="#funcionalidades">Funcionalidades</a><a data-sin-precios href="#planes">Planes y precios</a><a href="/producto/">Conocer el producto SELMI</a><a href="/recursos/">Guías para familias</a></div></div>
 
 <div><div class="fh">Legal</div><div class="flinks"><a href="#terminos" onclick="openM('tyc')">Términos y Condiciones</a><a href="#privacidad" onclick="openM('privacy')">Política de Privacidad</a><a href="#terminos" onclick="openM('tyc')">Seguridad</a></div></div>
 
@@ -2427,9 +2420,9 @@ fbq('track', 'PageView');
 
 <div class="lpc-name">SELMI Esencial</div>
 
-<div class="lpc-price" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Precio a confirmar</div>
+<div class="lpc-price" data-sin-precios style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Precio a confirmar</div>
 
-<div class="lpc-sub">Precios en definición</div>
+<div class="lpc-sub" data-sin-precios>Precios en definición</div>
 
 </div>
 
@@ -2437,9 +2430,9 @@ fbq('track', 'PageView');
 
 <div class="lpc-name">⭐ SELMI Completo</div>
 
-<div class="lpc-price" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Precio a confirmar</div>
+<div class="lpc-price" data-sin-precios style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Precio a confirmar</div>
 
-<div class="lpc-sub">Precios en definición</div>
+<div class="lpc-sub" data-sin-precios>Precios en definición</div>
 
 </div>
 
@@ -2447,9 +2440,9 @@ fbq('track', 'PageView');
 
 <div class="lpc-name">SELMI Premium</div>
 
-<div class="lpc-price" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Precio a confirmar</div>
+<div class="lpc-price" data-sin-precios style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Precio a confirmar</div>
 
-<div class="lpc-sub">Precios en definición</div>
+<div class="lpc-sub" data-sin-precios>Precios en definición</div>
 
 </div>
 
