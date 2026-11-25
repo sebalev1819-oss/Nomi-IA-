@@ -2105,7 +2105,7 @@ fbq('track', 'PageView');
 
 <span>📟 SELMI device on loan</span><span style="color:var(--border2)">·</span>
 
-<span>👨‍👩‍👦 Family app</span><span style="color:var(--border2)">·</span>
+<span>👨‍👩‍👦 Free family app</span><span style="color:var(--border2)">·</span>
 
 <span>📷 Built-in camera</span><span style="color:var(--border2)">·</span>
 
@@ -2143,7 +2143,7 @@ fbq('track', 'PageView');
 
 <li>✅ SELMI device on loan (included)</li>
 
-<li>📱 Family dashboard / app</li>
+<li>📱 Free family dashboard / app</li>
 
 <li>⏰ Basic reminders</li>
 
@@ -2535,32 +2535,6 @@ fbq('track', 'PageView');
 
 </div>
 
-<!-- PAYMENT MODAL -->
-
-<div class="ov" data-nosnippet="" id="modal-payment">
-
-<div class="modal mw">
-
-<button class="mcl" onclick="closeM('payment')">×</button>
-
-<h3 class="mtit">Complete your subscription</h3><p class="msub">Your payment is protected with 256-bit SSL encryption.</p>
-
-<div class="payb"><div><div class="pyn" id="py-n">Complete plan</div><div class="pyno">Monthly fee to be confirmed</div></div><div class="pyp" id="py-p" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div></div>
-
-<div class="fr"><div class="fg2"><label class="flbl">Full name</label><input class="finp" placeholder="Carlos García" type="text"/></div><div class="fg2"><label class="flbl">Email</label><input class="finp" placeholder="you@email.com" type="email"/></div></div>
-
-<div class="cf"><div class="cfl">Card number</div><input class="cfi" maxlength="19" oninput="fmtC(this)" placeholder="1234 5678 9012 3456" type="text"/></div>
-
-<div class="fr"><div class="cf"><div class="cfl">Expiry date</div><input class="cfi" maxlength="7" placeholder="MM / YY" type="text"/></div><div class="cf"><div class="cfl">CVV</div><input class="cfi" maxlength="4" placeholder="•••" type="text"/></div></div>
-
-<button class="fbn fbs" onclick="goPrf()" style="margin-top:16px">Confirm subscription →</button>
-
-<div class="secb"><div class="sbi">🔒 256-bit SSL</div><div class="sbi">✓ PCI DSS</div><div class="sbi">↩ 30-day guarantee</div></div>
-
-</div>
-
-</div>
-
 <!-- PROFILE WIZARD -->
 
 <div class="ov" data-nosnippet="" id="modal-profile">
@@ -2628,8 +2602,6 @@ fbq('track', 'PageView');
 <div style="background:var(--cream2);border:1.5px solid var(--border);border-radius:16px;padding:20px;margin:24px 0;text-align:left"><div style="font-size:11px;color:var(--sage2);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px">Profile created</div><div style="font-size:14px;color:var(--text2);line-height:2.1">✓ Personal information configured<br/>✓ Interests and favorite topics saved<br/>✓ Health conditions recorded<br/>✓ SELMI personalized and ready</div></div>
 
 <button class="fbn fbt" onclick="closeAll()">Start talking to SELMI →</button>
-
-<button class="fbn fbg" onclick="closeM('profile');openM('payment')" style="margin-top:8px">Explore plans</button>
 
 </div>
 
@@ -2770,13 +2742,11 @@ function openM(id){document.getElementById('modal-'+id).classList.add('on');docu
 function openLegalHash(){var lm={'#terminos':'tyc','#privacidad':'privacy'}[location.hash];if(lm)openM(lm)}
 window.addEventListener('hashchange',openLegalHash);openLegalHash();
 function closeM(id){document.getElementById('modal-'+id).classList.remove('on');document.body.style.overflow=''}
-function closeAll(){['login','lead','payment','profile','tyc','privacy'].forEach(closeM)}
+function closeAll(){['login','lead','profile','tyc','privacy'].forEach(closeM)}
 document.querySelectorAll('.ov').forEach(o=>{o.addEventListener('click',function(e){if(e.target===this){this.classList.remove('on');document.body.style.overflow=''}})})
 function showR(){document.getElementById('vl').style.display='none';document.getElementById('vr').style.display='block'}
 function showL(){document.getElementById('vr').style.display='none';document.getElementById('vl').style.display='block'}
 function startW(){closeM('login');openM('profile')}
-function goPrf(){closeM('payment');openM('profile')}
-function openPayment(plan,price){document.getElementById('py-n').textContent='Plan: '+displayPlan(plan);document.getElementById('py-p').textContent=Number(price)>0?'$'+price+'/month':'Price to be confirmed';openM('payment')}
 var _leadPlan='SELMI Completo';
 function openLead(plan){
   _leadPlan=plan||'SELMI Completo';
