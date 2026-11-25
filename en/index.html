@@ -1119,6 +1119,14 @@ fbq('track', 'PageView');
         },
         {
           "@type": "Question",
+          "name": "How long is the subscription?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The proposal is an annual subscription with the device on loan. Pricing, billing, cancellation, and return terms are specified in the agreement before subscribing."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Which countries is it available in?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -1141,7 +1149,6 @@ fbq('track', 'PageView');
 <script defer src="/assets/language-switch.js"></script>
 
 <link rel="stylesheet" href="/assets/site-trust.css"/>
-<style>/* Precios y planes ocultos del 19-nov al 29-nov-2026 (pedido de Sebastián). Para volver: git revert del commit «sin precios». */[data-sin-precios]{display:none!important}</style>
 </head>
 
 <body>
@@ -1194,7 +1201,7 @@ fbq('track', 'PageView');
 
 <a href="#funcionalidades">Features</a>
 
-<a data-sin-precios href="#planes">Plans</a>
+<a href="#planes">Plans</a>
 
 <a href="/en/resources/">Guides</a></nav>
 
@@ -1228,7 +1235,7 @@ fbq('track', 'PageView');
 
 <a href="#funcionalidades" onclick="closeMobNav()">Features</a>
 
-<a data-sin-precios href="#planes" onclick="closeMobNav()">Plans</a>
+<a href="#planes" onclick="closeMobNav()">Plans</a>
 
 <a href="/cuenta/login" onclick="closeMobNav()">My account</a>
 
@@ -1248,7 +1255,7 @@ fbq('track', 'PageView');
 
 <div class="hc">
 
-<div class="hbadge"><div class="bdot"></div><em>Launching first in Argentina</em></div>
+<div class="hbadge"><div class="bdot"></div><em>Launching first in Argentina · Pricing to be confirmed</em></div>
 
 <h1>A digital companion<br/><span class="hg">for older adults.</span></h1><p style="font-size:15px;color:var(--text2);margin:16px 0">AI conversation, everyday activities and family contact, through a tabletop device.</p>
 
@@ -1404,7 +1411,7 @@ fbq('track', 'PageView');
 
 <a href="/en/preorder/" style="background:#2563A8;color:#fff;text-decoration:none;font-family:Outfit,sans-serif;font-size:14px;font-weight:600;padding:13px 28px;border-radius:100px;display:inline-flex;align-items:center;transition:all .2s">Request my SELMI →</a>
 
-<button data-sin-precios onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})" style="background:rgba(15,30,46,.07);color:#0F1E2E;border:1px solid rgba(15,30,46,.15);font-family:Outfit,sans-serif;font-size:14px;padding:13px 28px;border-radius:100px;cursor:pointer;transition:all .2s">Explore plans</button>
+<button onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})" style="background:rgba(15,30,46,.07);color:#0F1E2E;border:1px solid rgba(15,30,46,.15);font-family:Outfit,sans-serif;font-size:14px;padding:13px 28px;border-radius:100px;cursor:pointer;transition:all .2s">Explore plans</button>
 
 </div>
 
@@ -2074,7 +2081,7 @@ fbq('track', 'PageView');
 
 <!-- PLANES -->
 
-<section class="plansbg" data-sin-precios id="planes">
+<section class="plansbg" id="planes">
 
 <div class="container">
 
@@ -2274,7 +2281,7 @@ fbq('track', 'PageView');
 
 <details class="fi2"><summary class="fq"><span>Are conversations private?</span><span class="fic" aria-hidden="true">+</span></summary><div class="fa">Family access and shared information should be agreed with the person. Ask about available features, providers, and the applicable policy before activating the service.</div></details>
 
-<details class="fi2" data-sin-precios><summary class="fq"><span>How long is the subscription?</span><span class="fic" aria-hidden="true">+</span></summary><div class="fa">The proposal is an annual subscription with the device on loan. Pricing, billing, cancellation, and return terms are specified in the agreement before subscribing.</div></details>
+<details class="fi2"><summary class="fq"><span>How long is the subscription?</span><span class="fic" aria-hidden="true">+</span></summary><div class="fa">The proposal is an annual subscription with the device on loan. Pricing, billing, cancellation, and return terms are specified in the agreement before subscribing.</div></details>
 
 <details class="fi2"><summary class="fq"><span>Which countries is it available in?</span><span class="fic" aria-hidden="true">+</span></summary><div class="fa">The initial launch is planned for Argentina. Ask us about availability in your city and future updates for other countries.</div></details>
 
@@ -2372,7 +2379,7 @@ fbq('track', 'PageView');
 
 </div>
 
-<div><div class="fh">Product</div><div class="flinks"><a href="#dispositivo">The device</a><a href="#para-quien">Who it's for</a><a href="#como-funciona">How it works</a><a href="#funcionalidades">Features</a><a data-sin-precios href="#planes">Plans and pricing</a><a href="/en/product/">Discover the SELMI device</a><a href="/en/resources/">Guides for families</a></div></div>
+<div><div class="fh">Product</div><div class="flinks"><a href="#dispositivo">The device</a><a href="#para-quien">Who it's for</a><a href="#como-funciona">How it works</a><a href="#funcionalidades">Features</a><a href="#planes">Plans and pricing</a><a href="/en/product/">Discover the SELMI device</a><a href="/en/resources/">Guides for families</a></div></div>
 
 <div><div class="fh">Legal</div><div class="flinks"><a href="#terminos" onclick="openM('tyc')">Terms and Conditions</a><a href="#privacidad" onclick="openM('privacy')">Privacy Policy</a><a href="#terminos" onclick="openM('tyc')">Security</a></div></div>
 
@@ -2418,9 +2425,9 @@ fbq('track', 'PageView');
 
 <div class="lpc-name">SELMI Essential</div>
 
-<div class="lpc-price" data-sin-precios style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
+<div class="lpc-price" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
 
-<div class="lpc-sub" data-sin-precios>Pricing to be confirmed</div>
+<div class="lpc-sub">Pricing to be confirmed</div>
 
 </div>
 
@@ -2428,9 +2435,9 @@ fbq('track', 'PageView');
 
 <div class="lpc-name">⭐ SELMI Complete</div>
 
-<div class="lpc-price" data-sin-precios style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
+<div class="lpc-price" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
 
-<div class="lpc-sub" data-sin-precios>Pricing to be confirmed</div>
+<div class="lpc-sub">Pricing to be confirmed</div>
 
 </div>
 
@@ -2438,9 +2445,9 @@ fbq('track', 'PageView');
 
 <div class="lpc-name">SELMI Premium</div>
 
-<div class="lpc-price" data-sin-precios style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
+<div class="lpc-price" style=";font-size:22px;letter-spacing:-.3px;line-height:1.3">Price to be confirmed</div>
 
-<div class="lpc-sub" data-sin-precios>Pricing to be confirmed</div>
+<div class="lpc-sub">Pricing to be confirmed</div>
 
 </div>
 
